@@ -4,7 +4,7 @@
 
 <style>
     .card-section {
-    margin-top: -80px;
+    top: -100px;
     position: relative;
     z-index: 5;
 }
@@ -32,6 +32,11 @@
 .feature-card .icon {
     font-size: 32px;
     margin-bottom: 10px;
+    color: #ffffff;
+    transition: color .25s ease;
+}
+.feature-card:hover .icon {
+    color: #14D1C7; 
 }
 .feature-card h6 {
     color: #ffffff;
@@ -56,7 +61,6 @@
     background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
     z-index: 1;
   }
-
   .carousel-caption {
     z-index: 2;
     bottom: 15%; 
@@ -117,6 +121,23 @@
         display: none;
     }
   }
+.float-card {
+  opacity: 1;
+  transform: translateY(60px);
+  animation: floatIn .9s ease forwards;
+}
+.delay-1 { animation-delay: .2s; }
+.delay-2 { animation-delay: .4s; }
+.delay-3 { animation-delay: .6s; }
+@keyframes floatIn {
+  from {
+    transform: translateY(60px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 </style>
 
 <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
@@ -152,52 +173,36 @@
   </button>
 </div>
 <div class="container card-section">
-  <div class="row g-4 justify-content-center">
-
-    <div class="col-lg-2 col-md-4 col-6">
-      <div class="feature-card">
-        <div class="icon">📘</div>
-        <h6>Pendidikan</h6>
-      </div>
+  <div class="row g-5 justify-content-center">
+    <div class="col-lg-3 col-md-4 col-10 float-card delay-1">
+      <div class="feature-card ">
+    <div class="icon">
+        <i class="bi bi-book"></i>
     </div>
-
-    <div class="col-lg-2 col-md-4 col-6">
-      <div class="feature-card">
-        <div class="icon">🕌</div>
-        <h6>Kegiatan Santri</h6>
-      </div>
+    <h6>Pendidikan</h6>
+</div>
     </div>
-
-    <div class="col-lg-2 col-md-4 col-6">
-      <div class="feature-card">
-        <div class="icon">📖</div>
-        <h6>Kitab Kuning</h6>
-      </div>
+    <div class="col-lg-3 col-md-4 col-10 float-card delay-2">
+      <div class="feature-card ">
+    <div class="icon">
+        <i class="bi-moon"></i>
     </div>
-
-    <div class="col-lg-2 col-md-4 col-6">
-      <div class="feature-card">
-        <div class="icon">🏫</div>
-        <h6>Asrama</h6>
-      </div>
+    <h6>Kegiatan</h6>
+</div>
     </div>
-
-    <div class="col-lg-2 col-md-4 col-6">
-      <div class="feature-card">
-        <div class="icon">🎓</div>
-        <h6>Pendaftaran</h6>
-      </div>
+    <div class="col-lg-3 col-md-4 col-10 float-card delay-3">
+      <div class="feature-card ">
+    <div class="icon">
+        <i class="bi-building"></i>
     </div>
-
-    <div class="col-lg-2 col-md-4 col-6">
-      <div class="feature-card">
-        <div class="icon">📞</div>
-        <h6>Kontak</h6>
-      </div>
+    <h6>Asrama</h6>
+</div>
     </div>
-
   </div>
 </div>
 
-    
+  <div class="container">
+    <h1 class="text-center fw-bold">TENTANG KAMI</h1>
+  </div>
+  
 @endsection
