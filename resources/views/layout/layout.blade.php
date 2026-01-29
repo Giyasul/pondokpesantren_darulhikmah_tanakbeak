@@ -129,6 +129,33 @@ body {
     color: #ffffff ;
     background-color: transparent ;
 }
+
+footer {
+  background-color: #182126; /* Senada dengan Navbar */
+  color: #ffffff;
+  padding: 60px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+footer h5 {
+  color: #14D1C7; /* Warna aksen hijau toska */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+footer .nav-link {
+  color: rgba(255, 255, 255, 0.7) !important;
+  transition: 0.3s;
+}
+
+footer .nav-link:hover {
+  color: #14D1C7 !important;
+  padding-left: 5px;
+}
+
+footer .text-body-secondary {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
 </style>
 </head>
 
@@ -202,6 +229,55 @@ body {
 </nav>
 
 @yield('konten')
+
+<footer class="mt-5">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <a href="/" class="d-flex align-items-center mb-3 text-decoration-none">
+          <img src="{{ asset('image/logo.jpeg') }}" alt="Logo" width="40" class="rounded-circle me-2">
+          <span class="brand-subtitle">Darul Hikmah</span>
+        </a>
+        <p class="text-body-secondary">
+          Pondok Pesantren Darul Hikmah Tanak Beak. <br>
+          Membina generasi qur'ani, berakhlak mulia, dan berwawasan luas.
+        </p>
+        <p class="text-body-secondary">© 2026 Ponpes Darul Hikmah.</p>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3 ms-auto">
+        <h5>Profil</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Sejarah</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Visi Misi</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Struktur</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Lembaga</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">RA</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">MI</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">MTs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">MA</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Bantuan</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Kontak</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">PPDB</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Lokasi</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
 
 </body>
 <script>
