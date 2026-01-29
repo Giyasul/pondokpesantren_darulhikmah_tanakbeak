@@ -131,25 +131,25 @@ body {
 }
 
 footer {
-  background-color: #182126; /* Senada dengan Navbar */
+  background-color: #182126; 
   color: #ffffff;
   padding: 60px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) ;
 }
 
 footer h5 {
-  color: #14D1C7; /* Warna aksen hijau toska */
+  color: #14D1C7; 
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
 footer .nav-link {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: rgba(255, 255, 255, 0.7);
   transition: 0.3s;
 }
 
 footer .nav-link:hover {
-  color: #14D1C7 !important;
+  color: #14D1C7 ;
   padding-left: 5px;
 }
 
@@ -236,7 +236,7 @@ footer .text-body-secondary {
       <div class="col-lg-4 mb-4">
         <a href="/" class="d-flex align-items-center mb-3 text-decoration-none">
           <img src="{{ asset('image/logo.jpeg') }}" alt="Logo" width="40" class="rounded-circle me-2">
-          <span class="brand-subtitle">Darul Hikmah</span>
+          <span class="brand-subtitle">Darul Hikmah Tanak Beak</span>
         </a>
         <p class="text-body-secondary">
           Pondok Pesantren Darul Hikmah Tanak Beak. <br>
@@ -275,9 +275,6 @@ footer .text-body-secondary {
     </div>
   </div>
 </footer>
-
-
-
 
 </body>
 <script>
