@@ -137,8 +137,74 @@
     transform: translateY(0);
   }
 }
+.about-section {
+  padding: 40px 0 80px;
+}
+.about-image {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.25),
+    0 0 18px rgba(255,255,255,.25),
+    0 0 32px rgba(20,209,199,.35),
+    0 20px 45px rgba(0,0,0,.75);
+}
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+.about-title span {
+  color: #14D1C7;
+}
+.about-text {
+  color: rgba(255,255,255,.75);
+  line-height: 1.7;
+}
+.about-list i {
+  color: #14D1C7;
+  margin-right: 8px;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.delay-1 { transition-delay: .15s }
+.delay-2 { transition-delay: .3s }
+.delay-3 { transition-delay: .45s }
+.about-btn {
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  color: #14D1C7;
+  border: 1px solid rgba(20,209,199,.65);
+  background: transparent;
+  transition: all .3s ease;
+  box-shadow:
+    0 0 0 rgba(20,209,199,0);
+}
 
+.about-btn:hover {
+  background: rgba(20,209,199,.15);
+  color: #14D1C7;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
+    0 0 10px rgba(20,209,199,.45),
+    0 0 22px rgba(20,209,199,.35),
+    0 10px 28px rgba(0,0,0,.6);
+}
 </style>
+
 
 <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -164,7 +230,6 @@
       </div>
     </div>
   </div>
-
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </button>
@@ -172,6 +237,7 @@
     <span class="carousel-control-next-icon"></span>
   </button>
 </div>
+
 <div class="container card-section">
   <div class="row g-5 justify-content-center">
     <div class="col-lg-3 col-md-4 col-10 float-card delay-1">
@@ -200,9 +266,55 @@
     </div>
   </div>
 </div>
-
-  <div class="container">
+ 
+<div class="container">
     <h1 class="text-center fw-bold">TENTANG KAMI</h1>
   </div>
+
+  <section class="about-section">
+  <div class="container">
+    <div class="row align-items-start g-5">
+      <div class="col-lg-6 reveal">
+        <div class="about-image">
+          <img src="{{ asset('image/pondok.jpeg') }}" alt="Pondok Pesantren">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h2 class="about-title reveal delay-2">
+          Pondok Pesantren <br>
+          <span>Darul Hikmah Tanak Beak</span>
+        </h2>
+        <p class="about-text mt-3 reveal delay-3">
+          Pondok Pesantren Darul Hikmah Tanak Beak adalah lembaga pendidikan Islam
+          yang berkomitmen membina generasi Qur’ani, berakhlakul karimah,
+          berilmu, dan mandiri melalui sistem pendidikan terpadu pesantren
+          dan pendidikan formal.
+        </p>
+        <ul class="list-unstyled about-list mt-4 reveal delay-3">
+          <li class="mb-2"><i class="bi bi-check-circle-fill"></i> Pendidikan berbasis nilai Islam</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill"></i> Pembinaan akhlak & karakter santri</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill"></i> Lingkungan aman & kondusif</li>
+        </ul>
+        <a href="#" 
+          class="btn btn-outline-info mt-2 px-4 py-2 reveal delay-3 about-btn">
+            Selengkapnya
+          <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
   
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+revealEls.forEach(el => revealObserver.observe(el));
+</script>
+
 @endsection

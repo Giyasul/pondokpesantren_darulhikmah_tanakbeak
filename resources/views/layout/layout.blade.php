@@ -152,15 +152,38 @@ footer .nav-link:hover {
   color: #14D1C7 ;
   padding-left: 5px;
 }
-
 footer .text-body-secondary {
   color: rgba(255, 255, 255, 0.5) !important;
+}
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all .3s ease;
+}
+.footer-social a:hover {
+  color: #14D1C7;
+  transform: scale(1.15);
+  background: rgba(20,209,199,0.15);
+  box-shadow:
+    0 0 12px rgba(20,209,199,0.45),
+    0 8px 22px rgba(0,0,0,0.55);
 }
 </style>
 </head>
 
 <body>
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-3" href="#">
@@ -168,7 +191,6 @@ footer .text-body-secondary {
        alt="Logo" 
        width="45" 
        class="rounded-circle shadow-sm">
-
   <div class="brand-text">
     <div class="brand-title">Pondok Pesantren</div>
     <div class="brand-subtitle">Darul Hikmah Tanak Beak</div>
@@ -177,13 +199,11 @@ footer .text-body-secondary {
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="#">Beranda</a>
         </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarProfil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Profil
@@ -196,7 +216,6 @@ footer .text-body-secondary {
             <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
           </ul>
         </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarLembaga" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Lembaga
@@ -208,7 +227,6 @@ footer .text-body-secondary {
             <li><a class="dropdown-item" href="#">MA</a></li>
           </ul>
         </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarInfo" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Informasi
@@ -219,7 +237,6 @@ footer .text-body-secondary {
             <li><a class="dropdown-item" href="#">Tentang</a></li>
           </ul>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" href="#">Galeri</a>
         </li>
@@ -231,7 +248,7 @@ footer .text-body-secondary {
 @yield('konten')
 
 <footer class="mt-5">
-  <div class="container py-5">
+  <div class="container ">
     <div class="row">
       <div class="col-lg-4 mb-4">
         <a href="/" class="d-flex align-items-center mb-3 text-decoration-none">
@@ -242,9 +259,15 @@ footer .text-body-secondary {
           Pondok Pesantren Darul Hikmah Tanak Beak. <br>
           Membina generasi qur'ani, berakhlak mulia, dan berwawasan luas.
         </p>
-        <p class="text-body-secondary">© 2026 Ponpes Darul Hikmah.</p>
+        <div class="footer-social ">
+  <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+  <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+  <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+</div>
+        <p class="text-body-secondary mt-3">© 2026 Ponpes Darul Hikmah.</p>
       </div>
-
       <div class="col-6 col-md-2 mb-3 ms-auto">
         <h5>Profil</h5>
         <ul class="nav flex-column">
@@ -253,7 +276,6 @@ footer .text-body-secondary {
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Struktur</a></li>
         </ul>
       </div>
-
       <div class="col-6 col-md-2 mb-3">
         <h5>Lembaga</h5>
         <ul class="nav flex-column">
@@ -263,7 +285,6 @@ footer .text-body-secondary {
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0">MA</a></li>
         </ul>
       </div>
-
       <div class="col-6 col-md-2 mb-3">
         <h5>Bantuan</h5>
         <ul class="nav flex-column">
@@ -287,5 +308,4 @@ footer .text-body-secondary {
     }
   });
 </script>
-
 </html>
