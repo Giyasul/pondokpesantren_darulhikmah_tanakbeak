@@ -292,7 +292,8 @@ section {
 }
 .map-stat-section {
   background-color: #182126; 
-  padding: 80px 0 120px;
+  margin-bottom: 10px;
+  padding-bottom: 100px;
   box-shadow:
     inset 0 8px 30px rgba(0,0,0,.7),
     inset 0 -8px 30px rgba(0,0,0,.7);

@@ -129,25 +129,21 @@ body {
     color: #ffffff ;
     background-color: transparent ;
 }
-
 footer {
   background-color: #182126; 
   color: #ffffff;
-  padding: 60px 0;
+  padding: 60px ;
   border-top: 1px solid rgba(255, 255, 255, 0.1) ;
 }
-
 footer h5 {
   color: #14D1C7; 
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
-
 footer .nav-link {
   color: rgba(255, 255, 255, 0.7);
   transition: 0.3s;
 }
-
 footer .nav-link:hover {
   color: #14D1C7 ;
   padding-left: 5px;
@@ -247,7 +243,7 @@ footer .text-body-secondary {
 
 @yield('konten')
 
-<footer class="mt-5">
+<footer>
   <div class="container ">
     <div class="row">
       <div class="col-lg-4 mb-4">
