@@ -132,7 +132,7 @@ body {
 footer {
   background-color: #182126; 
   color: #ffffff;
-  padding: 60px ;
+  padding: 60px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1) ;
 }
 footer h5 {
