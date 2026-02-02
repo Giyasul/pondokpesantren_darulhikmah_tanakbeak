@@ -4,7 +4,7 @@
 
     <style>
         .card-section {
-            top: -100px;
+            top: -80px;
             position: relative;
             z-index: 5;
         }

@@ -225,7 +225,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Beranda</a>
+                        <a class="nav-link" href="{{ url('/') }}">Beranda</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarProfil" role="button"
@@ -264,7 +264,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Galeri</a>
+                        <a class="nav-link" href="{{ url('/galeri') }}">Galeri</a>
                     </li>
                 </ul>
             </div>
@@ -288,7 +288,8 @@
                     </p>
                     <div class="footer-social ">
                         <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.youtube.com/@Pondokn4gadarulhikmah" target="_blank" rel="noopener"
+                            aria-label="YouTube"><i class="bi bi-youtube"></i></a>
                         <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                         <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                         <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
