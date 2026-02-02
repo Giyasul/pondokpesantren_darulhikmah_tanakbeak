@@ -95,19 +95,6 @@
             pointer-events: none;
         }
 
-        .gallery-overlay h5 {
-            color: #ffffff;
-            font-weight: 600;
-            text-shadow:
-                0 0 6px rgba(255, 255, 255, .45),
-                0 0 12px rgba(20, 209, 199, .35),
-                2px 2px 10px rgba(0, 0, 0, .85);
-        }
-
-        .gallery-item:hover .gallery-overlay h5 {
-            transform: translateY(0);
-        }
-
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -154,12 +141,12 @@
                 </div>
                 @php
                     $galeri = [
-                        ['pondok.jpeg', 'Kegiatan Belajar Santri'],
-                        ['pondok1.jpeg', 'Suasana Asrama Santri'],
-                        ['pondok2.jpeg', 'Kegiatan di Masjid Pondok'],
-                        ['pondok.jpeg', 'Ekstrakurikuler & Pelatihan'],
-                        ['pondok1.jpeg', 'Kegiatan Sosial Santri'],
-                        ['pondok2.jpeg', 'Upacara & Kegiatan Formal'],
+                        ['pondok.jpeg'],
+                        ['pondok1.jpeg'],
+                        ['pondok2.jpeg'],
+                        ['pondok.jpeg'],
+                        ['pondok1.jpeg'],
+                        ['pondok2.jpeg'],
                     ];
                 @endphp
 
@@ -167,13 +154,9 @@
                     <div class="col-lg-4 col-md-6 reveal delay-{{ ($i % 3) + 1 }}">
                         <div class="gallery-item">
                             <img src="{{ asset('image/' . $g[0]) }}">
-                            <div class="gallery-overlay">
-                                <h5>{{ $g[1] }}</h5>
-                            </div>
                         </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
     </section>

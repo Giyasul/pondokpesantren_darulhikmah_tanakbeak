@@ -257,7 +257,7 @@
 
         .sambutan-section {
             margin-top: 20px;
-            margin-bottom: 150px;
+            margin-bottom: 100px;
         }
 
         .sambutan-card {
