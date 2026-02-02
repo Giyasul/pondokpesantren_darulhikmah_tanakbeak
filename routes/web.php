@@ -8,3 +8,9 @@ Route::get('/', function () {
 Route::get('/galeri', function () {
     return view('galeri');
 });
+Route::get('/sejarah', function () {
+    return view('sejarah');
+});
+Route::get('/visi-misi', function () {
+    return view('visi_misi');
+});

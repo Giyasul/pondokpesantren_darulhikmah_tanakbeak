@@ -121,7 +121,7 @@
 
     <!-- HEADER -->
     <section class="page-header">
-        <div class="container">
+        <div class="container reveal">
             <h1>Galeri Kegiatan Pondok</h1>
             <p>
                 Dokumentasi kegiatan santri dan kehidupan di Pondok Pesantren

@@ -233,8 +233,8 @@
                             Profil
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarProfil">
-                            <li><a class="dropdown-item" href="#">Sejarah</a></li>
-                            <li><a class="dropdown-item" href="#">Visi & Misi</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/sejarah') }}">Sejarah</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/visi-misi') }}">Visi & Misi</a></li>
                             <li><a class="dropdown-item" href="#">Tenaga Pendidik</a></li>
                             <li><a class="dropdown-item" href="#">Ekskul</a></li>
                             <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
@@ -299,8 +299,10 @@
                 <div class="col-6 col-md-2 mb-3 ms-auto">
                     <h5>Profil</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Sejarah</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Visi Misi</a></li>
+                        <li class="nav-item mb-2"><a href="{{ url('/sejarah') }}" class="nav-link p-0">Sejarah</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="{{ url('/visi-misi') }}" class="nav-link p-0">Visi
+                                Misi</a></li>
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Struktur</a></li>
                     </ul>
                 </div>

@@ -542,22 +542,36 @@
                         <small class="text-muted d-block mb-3">
                             Kepala Yayasan Pondok Pesantren Darul Hikmah
                         </small>
+                        <p class="about-text fw-semibold">
+                            بسم الله الرحمن الرحيم
+                        </p>
                         <p class="about-text">
                             Assalamu’alaikum warahmatullahi wabarakatuh.
                         </p>
                         <p class="about-text">
-                            Puji syukur kehadirat Allah SWT atas limpahan rahmat dan karunia-Nya.
-                            Pondok Pesantren Darul Hikmah hadir sebagai lembaga pendidikan Islam
-                            terpadu yang berkomitmen mencetak generasi berakhlakul karimah,
-                            berilmu, dan mandiri.
+                            Puji syukur ke hadirat Allah Subhanahu wa Ta’ala atas limpahan rahmat,
+                            taufiq, dan inayah-Nya kepada kita semua. Shalawat serta salam semoga
+                            senantiasa tercurah kepada junjungan kita Nabi Muhammad
+                            Shallallahu ‘Alaihi Wasallam.
                         </p>
-                        <p class="about-text mb-3">
-                            Melalui integrasi kurikulum pesantren dan pendidikan nasional,
-                            kami berupaya membentuk santri yang unggul dalam ilmu,
-                            kuat dalam iman, dan siap menghadapi tantangan zaman.
+                        <p class="about-text">
+                            Dalam rangka turut serta mencerdaskan kehidupan bangsa serta
+                            mewujudkan tujuan pendidikan nasional, Yayasan Pondok Pesantren
+                            Darul Hikmah NWDI Tanak Beak Narmada menyelenggarakan pendidikan Islam
+                            terpadu, baik formal maupun nonformal.
                         </p>
-                        <p class="fw-semibold mb-0">
-                            — Nama Pimpinan
+                        <p class="about-text">
+                            Alhamdulillah, kehadiran website Pondok Pesantren Darul
+                            Hikmah ini menjadi sarana informasi dan komunikasi antara pondok
+                            pesantren dengan orang tua santri, pendidik, alumni, serta seluruh
+                            pihak yang peduli terhadap kemajuan pondok.
+                        </p>
+                        <p class="about-text">
+                            Kami berharap pemanfaatan teknologi informasi ini dapat mendukung
+                            peningkatan layanan pendidikan yang efektif, efisien, dan berkelanjutan.
+                        </p>
+                        <p class="fw-semibold mt-3 mb-0">
+                            — Pimpinan Pondok Pesantren Darul Hikmah NWDI Tanak Beak
                         </p>
                     </div>
                 </div>
