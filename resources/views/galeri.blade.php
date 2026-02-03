@@ -11,7 +11,7 @@
             padding: 180px 0;
             color: #fff;
             text-align: center;
-            border-bottom: 5px solid #D4AF37;
+            border-bottom: 3px solid #D4AF37;
         }
 
         .page-header h1 {
@@ -44,8 +44,8 @@
             overflow: hidden;
             background: #000;
             box-shadow:
-                0 0 0 1px rgba(255, 255, 255, .18),
-                0 0 18px rgba(20, 209, 199, .25),
+                0 0 0 1px rgba(212, 175, 55, .35),
+                0 0 16px rgba(212, 175, 55, .25),
                 0 18px 40px rgba(0, 0, 0, .65);
             transition: transform .35s ease, box-shadow .35s ease;
         }
@@ -53,7 +53,7 @@
         .gallery-item:hover {
             transform: translateY(-6px) scale(1.02);
             box-shadow:
-                0 0 22px rgba(20, 209, 199, .45),
+                0 0 22px rgba(212, 175, 55, .45),
                 0 22px 45px rgba(0, 0, 0, .75);
         }
 
@@ -92,8 +92,8 @@
             position: absolute;
             inset: 0;
             border-radius: 18px;
-            box-shadow: inset 0 -4px 0 #14D1C7;
-            opacity: .9;
+            box-shadow: inset 0 -4px 0 #D4AF37;
+            opacity: .95;
             pointer-events: none;
         }
 

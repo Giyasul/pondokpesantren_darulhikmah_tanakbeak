@@ -13,7 +13,7 @@
         }
 
         .carousel-item img {
-            height: 550px;
+            height: 570px;
             object-fit: cover;
             object-position: center;
             background-color: #ffffff;
@@ -26,7 +26,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+            background:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
             z-index: 1;
         }
 

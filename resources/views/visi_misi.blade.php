@@ -13,7 +13,7 @@
             padding: 180px 0;
             color: #fff;
             text-align: center;
-            border-bottom: 5px solid #D4AF37;
+            border-bottom: 3px solid #D4AF37;
         }
 
         .page-header h1 {
