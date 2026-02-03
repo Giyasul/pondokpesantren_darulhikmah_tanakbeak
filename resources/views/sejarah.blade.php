@@ -5,76 +5,104 @@
 @section('konten')
 
     <style>
+        /* HEADER - Redup & Elegan */
         .page-header {
             background:
-                linear-gradient(to bottom, rgba(0, 0, 0, .45), rgba(0, 0, 0, .85)),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)),
                 url('{{ asset('image/pondok.jpeg') }}') center/cover no-repeat;
-            padding: 120px 0;
+            padding: 140px 0;
             color: #fff;
             text-align: center;
+            border-bottom: 5px solid #D4AF37; 
         }
 
         .page-header h1 {
             font-weight: 800;
-            font-size: clamp(2rem, 4vw, 3rem);
-            letter-spacing: .5px;
-            color: #ffffff;
-            text-shadow:
-                0 0 6px rgba(255, 255, 255, .45),
-                0 0 14px rgba(20, 209, 199, .35),
-                2px 2px 10px rgba(0, 0, 0, .85);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            /* Warna diubah jadi putih dengan glow emas tipis */
+            color: #ffffff; 
+            text-shadow: 0 0 70px rgba(212, 175, 55, 0.6), 2px 2px 4px rgba(0, 0, 0, 0.5);
+            
         }
 
-        .page-header p {
-            color: rgba(255, 255, 255, .9);
-            text-shadow:
-                0 0 6px rgba(255, 255, 255, .45),
-                0 0 6px rgba(20, 209, 199, .25),
-                2px 2px 8px rgba(0, 0, 0, .75);
-        }
-
+        /* CARD KONTEN */
         .history-card {
-            background: rgba(34, 46, 53, .92);
-            border-radius: 22px;
-            box-shadow:
-                0 0 0 1px rgba(255, 255, 255, .18),
-                0 0 18px rgba(20, 209, 199, .25),
-                0 20px 45px rgba(0, 0, 0, .65);
+            background: #ffffff;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 25px; 
+            position: relative;
+            z-index: 10;
+            border: 1px solid #eee;
         }
 
+        /* Judul Section di dalam Card */
+        .section-title {
+            color: #004d00;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 4px;
+            background: #D4AF37;
+            margin: 8px auto 0;
+            border-radius: 10px;
+        }
+
+        /* TIMELINE - Hijau NW & Emas */
         .timeline {
             position: relative;
-            padding-left: 34px;
+            padding-left: 35px;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 12px;
+            left: 10px;
             top: 0;
             bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom,
-                    #14D1C7,
-                    rgba(20, 209, 199, .1));
-            border-radius: 99px;
+            width: 4px;
+            background: linear-gradient(to bottom, #004d00, #D4AF37); 
+            border-radius: 10px;
         }
 
         .timeline-item {
             position: relative;
-            margin-bottom: 42px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: #D4AF37; 
+            border: 4px solid #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px #004d00;
+            z-index: 2;
         }
 
         .timeline-item h5 {
-            color: #14D1C7;
-            font-weight: 700;
-            margin-bottom: 8px;
+            color: #004d00;
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
         }
 
         .timeline-item p {
-            color: #E0F7F5;
+            color: #333333;
             line-height: 1.9;
-            margin-bottom: 0;
+            text-align: justify;
         }
 
         .reveal {
@@ -89,46 +117,28 @@
         }
 
         @media (max-width: 768px) {
-            .reveal {
-                opacity: 1 !important;
-                transform: none !important;
-            }
+            .page-header { padding: 100px 0; }
+            .history-card { margin-top: 20px; } 
         }
     </style>
 
-    <!-- HEADER -->
     <section class="page-header">
         <div class="container reveal">
-            <h1>Sejarah Pondok Pesantren</h1>
-            <p>
-                Perjalanan panjang lahir dan berkembangnya Pondok Pesantren
-                Darul Hikmah NW sebagai pusat pendidikan Islam
-            </p>
+            <h1>Sejarah Perjalanan</h1>
+            <p>Pondok Pesantren Darul Hikmah NW Tanak Beak</p>
         </div>
     </section>
 
-    <!-- KONTEN -->
-    <section class="py-5">
+    <section class="py-4" style="background-color: #f4f7f4;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-11 col-xl-10 reveal">
 
-                    <div class="history-card history-wide p-4 p-md-5">
-                        <div class="text-center mb-4">
-                            <h3 class="fw-bold" style="color:#ffffff">
-                                SELAYANG PANDANG PONPES DARUL HIKMAH NWDI
-                            </h3>
-                            <div
-                                style="
-                                    width: 80px;
-                                    height: 4px;
-                                    background: #ffffff;
-                                    margin: 10px auto 0;
-                                    border-radius: 99px;
-                                    box-shadow: 0 0 12px rgba(20,209,199,.7);
-                                    ">
-                            </div>
+                    <div class="history-card p-4 p-md-5">
+                        <div class="text-center mb-5">
+                            <h2 class="section-title">SELAYANG PANDANG PONPES DARUL HIKMAH NW</h2>
                         </div>
+
                         <div class="timeline">
 
                             <div class="timeline-item">
@@ -242,7 +252,6 @@
                             </div>
 
                         </div>
-
                     </div>
 
                 </div>
@@ -251,18 +260,15 @@
     </section>
 
     <script>
-        const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show');
                 }
             });
-        }, {
-            threshold: 0.2
-        });
+        }, { threshold: 0.1 });
 
-        reveals.forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 
 @endsection

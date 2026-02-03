@@ -17,8 +17,9 @@
 
         body {
             font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-            background-color: #1B2A31;
-            color: #ffffff;
+            /* Mengubah background body menjadi lebih netral agar warna hijau NW menonjol */
+            background-color: #f4f7f4; 
+            color: #333333;
             margin: 0;
             padding-top: 70px;
         }
@@ -28,12 +29,14 @@
             top: 0;
             left: 0;
             z-index: 1050;
-            background: #182126;
+            /* Hijau NW Gelap */
+            background: #004d00; 
             padding: 14px 0;
             transition: all 0.35s ease;
             width: 100%;
             z-index: 10;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+            /* Border bawah warna emas tipis */
+            border-bottom: 2px solid #D4AF37; 
         }
 
         .navbar .nav-link {
@@ -42,41 +45,41 @@
         }
 
         .navbar .nav-link:hover {
-            color: #14D1C7;
+            /* Hover menjadi warna emas */
+            color: #D4AF37; 
         }
 
         .navbar .dropdown-menu {
-            background: rgba(34, 46, 53, 0.92);
+            /* Background dropdown putih bersih agar kontras dengan teks hijau */
+            background: rgba(255, 255, 255, 0.98); 
             backdrop-filter: blur(6px);
             border-radius: 16px;
             padding: 14px 10px;
             min-width: 230px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            border: 1px solid #D4AF37;
             box-shadow:
-                0 0 0 1px rgba(255, 255, 255, 0.15),
-                0 0 14px rgba(255, 255, 255, 0.15),
-                0 16px 40px rgba(0, 0, 0, 0.65);
+                0 16px 40px rgba(0, 0, 0, 0.2);
             transform-origin: top;
         }
 
         .navbar .dropdown-item {
-            color: #ffffff;
+            /* Teks dropdown menjadi hijau gelap */
+            color: #004d00; 
             padding: 12px 16px;
             margin-bottom: 6px;
             border-radius: 12px;
             font-size: 14px;
             font-weight: 500;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(0, 77, 0, 0.03);
             transition: all .25s ease;
         }
 
         .navbar .dropdown-item:hover {
-            background: rgba(20, 209, 199, 0.15);
-            color: #14D1C7;
+            /* Hover item dropdown menjadi hijau NW */
+            background: #004d00;
+            color: #ffffff;
             transform: translateX(6px);
-            box-shadow:
-                0 0 8px rgba(20, 209, 199, 0.35),
-                0 6px 18px rgba(0, 0, 0, 0.45);
+            box-shadow: 0 4px 12px rgba(0, 77, 0, 0.2);
         }
 
         .dropdown-menu {
@@ -95,9 +98,10 @@
         }
 
         .navbar-scroll {
-            background: rgba(27, 40, 48, 0.65);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            /* Tembus pandang (glassmorphism) saat di scroll dengan nuansa hijau gelap */
+            background: rgba(0, 77, 0, 0.75) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
         }
 
         .carousel-img {
@@ -111,7 +115,8 @@
         }
 
         .nav-item.dropdown:hover .dropdown-toggle::after {
-            border-top-color: #14D1C7;
+            /* Panah dropdown menjadi emas saat hover */
+            border-top-color: #D4AF37;
             transform: rotate(180deg);
         }
 
@@ -133,7 +138,8 @@
         .brand-title {
             font-size: 12px;
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.85);
+            /* Emas lembut untuk title atas */
+            color: #D4AF37; 
             text-align: center;
         }
 
@@ -151,14 +157,16 @@
         }
 
         footer {
-            background-color: #182126;
+            /* Footer hijau NW lebih pekat */
+            background-color: #003300; 
             color: #ffffff;
             padding: 60px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid #D4AF37;
         }
 
         footer h5 {
-            color: #14D1C7;
+            /* Judul footer warna emas */
+            color: #D4AF37;
             font-weight: 700;
             margin-bottom: 1.5rem;
         }
@@ -169,7 +177,7 @@
         }
 
         footer .nav-link:hover {
-            color: #14D1C7;
+            color: #D4AF37;
             padding-left: 5px;
         }
 
@@ -192,17 +200,17 @@
             color: #ffffff;
             font-size: 18px;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            /* Border icon sosial media warna emas */
+            border: 1px solid rgba(212, 175, 55, 0.4); 
             transition: all .3s ease;
         }
 
         .footer-social a:hover {
-            color: #14D1C7;
+            /* Hover icon sosial media menjadi emas */
+            color: #003300;
             transform: scale(1.15);
-            background: rgba(20, 209, 199, 0.15);
-            box-shadow:
-                0 0 12px rgba(20, 209, 199, 0.45),
-                0 8px 22px rgba(0, 0, 0, 0.55);
+            background: #D4AF37;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
         }
     </style>
 </head>
@@ -212,7 +220,7 @@
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-3" href="#">
                 <img src="{{ asset('image/logo.jpeg') }}" alt="Logo" width="45"
-                    class="rounded-circle shadow-sm">
+                    class="rounded-circle shadow-sm border border-white">
                 <div class="brand-text">
                     <div class="brand-title">Pondok Pesantren</div>
                     <div class="brand-subtitle">Darul Hikmah Tanak Beak</div>

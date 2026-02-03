@@ -201,7 +201,7 @@
         }
 
         .about-text {
-            color: rgba(255, 255, 255, .75);
+            color: rgba(0, 0, 0, 0.75);
             line-height: 1.7;
         }
 
@@ -261,19 +261,19 @@
         }
 
         .sambutan-card {
-            background: rgba(34, 46, 53, 0.88);
+            background: #FFFFFF;
             border-radius: 15px;
             padding: 28px 30px;
-            color: #fff;
+            color: #000000;
             box-shadow:
                 0 0 0 1px rgba(255, 255, 255, .2),
                 0 0 18px rgba(20, 209, 199, .25),
                 0 18px 40px rgba(0, 0, 0, .65);
-            border-left: 4px solid #14D1C7;
+            border-left: 4px solid #D4AF37;
         }
 
         .sambutan-card h4 {
-            color: #ffffff;
+            color: #004d00;
         }
 
         .sambutan-card small {
@@ -358,13 +358,11 @@
         }
 
         .map-stat-section {
-            background-color: #182126;
+            background-color: #0D6B0D;
             margin-bottom: 0px;
             padding-top: 80px;
             padding-bottom: 130px;
-            box-shadow:
-                inset 0 8px 30px rgba(0, 0, 0, .7),
-                inset 0 -8px 30px rgba(0, 0, 0, .7);
+            
         }
 
         .section-title {
@@ -489,7 +487,7 @@
                     <h5>Mencetak Generasi Berdaya Saing</h5>
                     <p>Perpaduan nilai keislaman dan kompetensi untuk masa depan gemilang</p>
                 </div>
-            </div>
+            </div>  
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
@@ -684,7 +682,7 @@
                 <div class="col-lg-7 reveal reveal-map">
                     <h5 class="section-title mb-3">Peta Lokasi</h5>
                     <hr>
-                    <div class="map-wrapper shadow-soft">
+                    <div class="map-wrapper">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.8471989072054!2d116.1890462744468!3d-8.610665187471678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdb8f8c5efbd9b%3A0xdc79eab95cb0b5a9!2sPonpes%20Darul%20Hikmah%20NW%20Tanak%20Beak%20Narmada!5e0!3m2!1sid!2sid!4v1769839147274"
                             allowfullscreen loading="lazy">
