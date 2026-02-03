@@ -17,8 +17,7 @@
 
         body {
             font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-            /* Mengubah background body menjadi lebih netral agar warna hijau NW menonjol */
-            background-color: #f4f7f4; 
+            background-color: #f4f7f4;
             color: #333333;
             margin: 0;
             padding-top: 70px;
@@ -29,14 +28,11 @@
             top: 0;
             left: 0;
             z-index: 1050;
-            /* Hijau NW Gelap */
-            background: #004d00; 
+            background: #004d00;
             padding: 14px 0;
             transition: all 0.35s ease;
             width: 100%;
-            z-index: 10;
-            /* Border bawah warna emas tipis */
-            border-bottom: 2px solid #D4AF37; 
+            border-bottom: 2px solid #D4AF37;
         }
 
         .navbar .nav-link {
@@ -45,13 +41,11 @@
         }
 
         .navbar .nav-link:hover {
-            /* Hover menjadi warna emas */
-            color: #D4AF37; 
+            color: #D4AF37;
         }
 
         .navbar .dropdown-menu {
-            /* Background dropdown putih bersih agar kontras dengan teks hijau */
-            background: rgba(255, 255, 255, 0.98); 
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(6px);
             border-radius: 16px;
             padding: 14px 10px;
@@ -63,8 +57,7 @@
         }
 
         .navbar .dropdown-item {
-            /* Teks dropdown menjadi hijau gelap */
-            color: #004d00; 
+            color: #004d00;
             padding: 12px 16px;
             margin-bottom: 6px;
             border-radius: 12px;
@@ -75,7 +68,6 @@
         }
 
         .navbar .dropdown-item:hover {
-            /* Hover item dropdown menjadi hijau NW */
             background: #004d00;
             color: #ffffff;
             transform: translateX(6px);
@@ -98,7 +90,6 @@
         }
 
         .navbar-scroll {
-            /* Tembus pandang (glassmorphism) saat di scroll dengan nuansa hijau gelap */
             background: rgba(0, 77, 0, 0.75) !important;
             backdrop-filter: blur(10px);
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
@@ -115,7 +106,6 @@
         }
 
         .nav-item.dropdown:hover .dropdown-toggle::after {
-            /* Panah dropdown menjadi emas saat hover */
             border-top-color: #D4AF37;
             transform: rotate(180deg);
         }
@@ -138,8 +128,7 @@
         .brand-title {
             font-size: 12px;
             font-weight: 400;
-            /* Emas lembut untuk title atas */
-            color: #D4AF37; 
+            color: #D4AF37;
             text-align: center;
         }
 
@@ -157,15 +146,13 @@
         }
 
         footer {
-            /* Footer hijau NW lebih pekat */
-            background-color: #003300; 
+            background-color: #003300;
             color: #ffffff;
-            padding: 60px 0;
+            padding: 50px 0;
             border-top: 4px solid #D4AF37;
         }
 
         footer h5 {
-            /* Judul footer warna emas */
             color: #D4AF37;
             font-weight: 700;
             margin-bottom: 1.5rem;
@@ -200,13 +187,11 @@
             color: #ffffff;
             font-size: 18px;
             background: rgba(255, 255, 255, 0.05);
-            /* Border icon sosial media warna emas */
-            border: 1px solid rgba(212, 175, 55, 0.4); 
+            border: 1px solid rgba(212, 175, 55, 0.4);
             transition: all .3s ease;
         }
 
         .footer-social a:hover {
-            /* Hover icon sosial media menjadi emas */
             color: #003300;
             transform: scale(1.15);
             background: #D4AF37;
@@ -268,7 +253,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarInfo">
                             <li><a class="dropdown-item" href="#">PPDB</a></li>
                             <li><a class="dropdown-item" href="#">Perpustakaan Digital</a></li>
-                            <li><a class="dropdown-item" href="#">Tentang</a></li>
+                            <li><a class="dropdown-item" href="#">Berita & Artikel</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

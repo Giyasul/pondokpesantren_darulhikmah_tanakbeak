@@ -3,57 +3,17 @@
 @section('konten')
 
     <style>
-        .card-section {
-            top: -80px;
-            position: relative;
-            z-index: 5;
+        html,
+        body {
+            overflow-x: hidden;
         }
 
-        .feature-card {
-            position: relative;
-            background: rgba(34, 46, 53, 0.88);
-            border-radius: 16px;
-            backdrop-filter: blur(4px);
-            padding: 28px 18px;
-            text-align: center;
-            color: #fff;
-            cursor: pointer;
-            box-shadow:
-                0 0 0 1px rgba(255, 255, 255, 0.25),
-                0 0 12px 4px rgba(255, 255, 255, 0.18),
-                0 14px 30px rgba(0, 0, 0, 0.55);
-            transition: transform .25s ease, box-shadow .25s ease;
-        }
-
-        .feature-card:hover {
-            transform: scale(1.07);
-            box-shadow:
-                0 0 18px 6px rgba(255, 255, 255, 0.25),
-                0 20px 40px rgba(0, 0, 0, 0.65);
-        }
-
-        .feature-card .icon {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #ffffff;
-            transition: color .25s ease;
-        }
-
-        .feature-card:hover .icon {
-            color: #14D1C7;
-        }
-
-        .feature-card h6 {
-            color: #ffffff;
-            transition: color .25s ease;
-        }
-
-        .feature-card:hover h6 {
-            color: #14D1C7;
+        #carouselExampleCaptions {
+            border-bottom: 3px solid #D4AF37;
         }
 
         .carousel-item img {
-            height: 600px;
+            height: 550px;
             object-fit: cover;
             object-position: center;
             background-color: #ffffff;
@@ -82,7 +42,7 @@
             font-size: 3rem;
             text-shadow:
                 0 0 6px rgba(255, 255, 255, 0.45),
-                0 0 14px rgba(20, 209, 199, 0.35),
+                0 0 14px rgba(212, 175, 55, 0.35),
                 2px 2px 10px rgba(0, 0, 0, 0.85);
         }
 
@@ -91,7 +51,7 @@
             font-size: 1.1rem;
             text-shadow:
                 0 0 6px rgba(255, 255, 255, 0.45),
-                0 0 14px rgba(20, 209, 199, 0.35),
+                0 0 14px rgba(212, 175, 55, 0.35),
                 2px 2px 10px rgba(0, 0, 0, 0.85);
         }
 
@@ -102,27 +62,30 @@
 
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
-            background-size: 20px;
-            background-color: rgba(34, 46, 53, 0.85);
+            background-size: 18px;
+            border: 1.5px solid rgba(212, 175, 55, 0.6);
             backdrop-filter: blur(6px);
             box-shadow:
-                0 0 8px rgba(255, 255, 255, 0.35),
-                0 0 18px rgba(20, 209, 199, 0.35),
-                0 10px 28px rgba(0, 0, 0, 0.65);
-            transition: all .3s ease;
+                0 0 0 1px rgba(212, 175, 55, 0.25),
+                0 0 14px rgba(212, 175, 55, 0.35),
+                0 12px 30px rgba(0, 0, 0, 0.75);
+            transition:
+                background-color .35s ease,
+                box-shadow .45s cubic-bezier(.22, 1, .36, 1),
+                transform .35s ease;
         }
 
         .carousel-control-prev-icon:hover,
         .carousel-control-next-icon:hover {
-            background-color: rgba(20, 209, 199, 0.95);
+            background-color: #D4AF37;
             box-shadow:
-                0 0 12px rgba(255, 255, 255, 0.6),
-                0 0 26px rgba(20, 209, 199, 0.65),
-                0 14px 36px rgba(0, 0, 0, 0.75);
-            transform: scale(1.08);
+                0 0 0 1px rgba(212, 175, 55, 0.8),
+                0 0 22px rgba(212, 175, 55, 0.7),
+                0 18px 40px rgba(0, 0, 0, 0.85);
+            transform: scale(1.1);
         }
 
         @media (max-width: 768px) {
@@ -141,33 +104,6 @@
             }
         }
 
-        .float-card {
-            opacity: 1;
-            transform: translateY(60px);
-            animation: floatIn .9s ease forwards;
-        }
-
-        .delay-1 {
-            animation-delay: .2s;
-        }
-
-        .delay-2 {
-            animation-delay: .4s;
-        }
-
-        .delay-3 {
-            animation-delay: .6s;
-        }
-
-        @keyframes floatIn {
-            from {
-                transform: translateY(60px);
-            }
-
-            to {
-                transform: translateY(0);
-            }
-        }
 
         .about-section {
             margin-top: 20px;
@@ -181,7 +117,6 @@
             box-shadow:
                 0 0 0 1px rgba(255, 255, 255, .25),
                 0 0 18px rgba(255, 255, 255, .25),
-                0 0 32px rgba(20, 209, 199, .35),
                 0 20px 45px rgba(0, 0, 0, .75);
         }
 
@@ -197,7 +132,7 @@
         }
 
         .about-title span {
-            color: #14D1C7;
+            color: #004d00;
         }
 
         .about-text {
@@ -206,7 +141,7 @@
         }
 
         .about-list i {
-            color: #14D1C7;
+            color: #004d00;
             margin-right: 8px;
         }
 
@@ -234,30 +169,37 @@
         }
 
         .about-btn {
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: 600;
             letter-spacing: .3px;
-            color: #14D1C7;
-            border: 1px solid rgba(20, 209, 199, .65);
+            color: #0D6B0D;
+            border: 1.8px solid #0D6B0D;
             background: transparent;
-            transition: all .3s ease;
-            box-shadow:
-                0 0 0 rgba(20, 209, 199, 0);
+            transition:
+                background-color .35s ease,
+                color .35s ease,
+                box-shadow .45s cubic-bezier(.22, 1, .36, 1),
+                transform .45s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .about-btn i {
+            transition: transform .45s cubic-bezier(.22, 1, .36, 1);
         }
 
         .about-btn:hover {
-            background: rgba(20, 209, 199, .15);
-            color: #14D1C7;
-            transform: translateY(-2px) scale(1.03);
-            box-shadow:
-                0 0 10px rgba(20, 209, 199, .45),
-                0 0 22px rgba(20, 209, 199, .35),
-                0 10px 28px rgba(0, 0, 0, .6);
+            background: #0D6B0D;
+            color: #ffffff;
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 14px 36px rgba(13, 107, 13, .35);
+        }
+
+        .about-btn:hover i {
+            transform: translateX(6px);
         }
 
         .sambutan-section {
-            margin-top: 20px;
-            margin-bottom: 100px;
+            margin-top: 80px;
+            margin-bottom: 80px;
         }
 
         .sambutan-card {
@@ -267,17 +209,12 @@
             color: #000000;
             box-shadow:
                 0 0 0 1px rgba(255, 255, 255, .2),
-                0 0 18px rgba(20, 209, 199, .25),
                 0 18px 40px rgba(0, 0, 0, .65);
             border-left: 4px solid #D4AF37;
         }
 
         .sambutan-card h4 {
             color: #004d00;
-        }
-
-        .sambutan-card small {
-            color: rgba(255, 255, 255, .6) !important;
         }
 
         .sambutan-image {
@@ -288,7 +225,6 @@
             box-shadow:
                 0 0 0 1px rgba(255, 255, 255, .25),
                 0 0 18px rgba(255, 255, 255, .25),
-                0 0 32px rgba(20, 209, 199, .35),
                 0 20px 45px rgba(0, 0, 0, .75);
         }
 
@@ -300,11 +236,10 @@
         }
 
         .article-section {
-            background-color: #182126;
+            background-color: #0D6B0D;
             padding: 70px 0 80px;
-            box-shadow:
-                inset 0 8px 30px rgba(0, 0, 0, .7),
-                inset 0 -8px 30px rgba(0, 0, 0, .7);
+            border-top: 3px solid #D4AF37;
+            border-bottom: 3px solid #D4AF37;
         }
 
         .article-title {
@@ -313,27 +248,27 @@
             color: #ffffff;
         }
 
-        .article-title span {
-            color: #14D1C7;
-        }
-
         .article-card {
-            background: rgba(34, 46, 53, 0.9);
-            border-radius: 16px;
+            background: #ffffff;
+            border-radius: 18px;
             overflow: hidden;
-            color: #fff;
+            color: #222;
+            border: 2px solid rgba(212, 175, 55, .65);
             box-shadow:
-                0 0 0 1px rgba(255, 255, 255, .18),
-                0 0 18px rgba(20, 209, 199, .25),
-                0 18px 40px rgba(0, 0, 0, .65);
-            transition: transform .3s ease, box-shadow .3s ease;
+                0 10px 22px rgba(212, 175, 55, .35),
+                0 20px 45px rgba(0, 0, 0, .2);
+            transition:
+                transform .45s cubic-bezier(.22, 1, .36, 1),
+                box-shadow .45s cubic-bezier(.22, 1, .36, 1),
+                border-color .45s ease;
         }
 
         .article-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
+            border-color: #D4AF37;
             box-shadow:
-                0 0 22px rgba(20, 209, 199, .45),
-                0 22px 45px rgba(0, 0, 0, .75);
+                0 14px 32px rgba(212, 175, 55, .6),
+                0 28px 60px rgba(0, 0, 0, .25);
         }
 
         .article-card img {
@@ -343,13 +278,15 @@
         }
 
         .article-card h6 {
-            font-weight: 700;
+            font-weight: 800;
+            color: #004d00;
+            font-size: 1.05rem;
         }
 
         .article-card p {
-            color: rgba(255, 255, 255, .75);
+            color: rgba(0, 0, 0, .7);
             font-size: .95rem;
-            flex-grow: 1;
+            line-height: 1.6;
         }
 
         section {
@@ -362,13 +299,12 @@
             margin-bottom: 0px;
             padding-top: 80px;
             padding-bottom: 130px;
-            
+            border-top: 3px solid #D4AF37;
         }
 
         .section-title {
             color: #fff;
             font-weight: 700;
-            letter-spacing: .3px;
         }
 
         .map-wrapper {
@@ -389,13 +325,13 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            background: rgba(255, 255, 255, .05);
+            background: #FFFFFF;
             border-radius: 14px;
             padding: 20px;
-            color: #fff;
+            border: 2px solid #D4AF37;
             box-shadow:
-                0 0 0 1px rgba(20, 209, 199, .35),
-                0 0 14px rgba(20, 209, 199, .35),
+                0 0 0 1px rgba(212, 175, 55, .45),
+                0 0 18px rgba(212, 175, 55, .35),
                 0 18px 36px rgba(0, 0, 0, .75);
             transition: transform .3s ease;
         }
@@ -403,28 +339,34 @@
         .stat-card:hover {
             transform: translateY(-6px) scale(1.02);
             box-shadow:
-                0 0 0 1px rgba(20, 209, 199, .55),
-                0 0 22px rgba(20, 209, 199, .55),
-                0 26px 50px rgba(0, 0, 0, .85);
+                0 0 0 1px rgba(212, 175, 55, .45),
+                0 0 18px rgba(212, 175, 55, .35),
+                0 22px 46px rgba(0, 0, 0, .75);
         }
 
         .stat-icon {
-            width: 56px;
-            height: 56px;
+            width: 52px;
+            height: 52px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
-            font-size: 24px;
+            background: #0D6B0D;
+            color: #ffffff;
+            font-size: 22px;
         }
 
         .stat-card h3 {
-            color: #14D1C7;
+            color: #0D6B0D;
+        }
+
+        .stat-card h6 {
+            color: #2f3a2f;
+            font-weight: 600;
         }
 
         .stat-card small {
-            color: rgba(255, 255, 255, .6);
+            color: #6b6b6b;
         }
 
         .reveal-map {
@@ -487,7 +429,7 @@
                     <h5>Mencetak Generasi Berdaya Saing</h5>
                     <p>Perpaduan nilai keislaman dan kompetensi untuk masa depan gemilang</p>
                 </div>
-            </div>  
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
@@ -495,35 +437,6 @@
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
-    </div>
-
-    <div class="container card-section">
-        <div class="row g-5 justify-content-center">
-            <div class="col-lg-3 col-md-4 col-10 float-card delay-1">
-                <div class="feature-card ">
-                    <div class="icon">
-                        <i class="bi bi-book"></i>
-                    </div>
-                    <h6>Pendidikan</h6>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-10 float-card delay-2">
-                <div class="feature-card ">
-                    <div class="icon">
-                        <i class="bi-moon"></i>
-                    </div>
-                    <h6>Kegiatan</h6>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-10 float-card delay-3">
-                <div class="feature-card ">
-                    <div class="icon">
-                        <i class="bi-building"></i>
-                    </div>
-                    <h6>Asrama</h6>
-                </div>
-            </div>
-        </div>
     </div>
 
     <section class="sambutan-section">
@@ -581,9 +494,9 @@
         <div class="container">
             <div class="text-center mb-5 reveal">
                 <h2 class="article-title">
-                    Artikel & <span>Berita Pesantren</span>
+                    Artikel & Berita Pesantren
                 </h2>
-                <p class="about-text mt-2">
+                <p class=" mt-2" style="color: #ffffff">
                     Informasi dan kegiatan terbaru Pondok Pesantren Darul Hikmah
                 </p>
             </div>
@@ -598,7 +511,7 @@
                                 Berbagai kegiatan keislaman dan pembinaan karakter santri
                                 selama bulan suci Ramadhan.
                             </p>
-                            <a href="#" class="btn btn-outline-info btn-sm mt-2">
+                            <a href="#" class="btn mt-2 about-btn">
                                 Baca Selengkapnya
                             </a>
                         </div>
@@ -614,7 +527,7 @@
                                 Informasi resmi pendaftaran santri baru tahun ajaran
                                 2026/2027 pondok pesantren Darul Hikmah.
                             </p>
-                            <a href="#" class="btn btn-outline-info btn-sm mt-2">
+                            <a href="#" class="btn mt-2 about-btn">
                                 Baca Selengkapnya
                             </a>
                         </div>
@@ -630,7 +543,7 @@
                                 Santri Darul Hikmah meraih prestasi di berbagai bidang
                                 akademik dan non-akademik.
                             </p>
-                            <a href="#" class="btn btn-outline-info btn-sm mt-2">
+                            <a href="#" class="btn mt-2 about-btn">
                                 Baca Selengkapnya
                             </a>
                         </div>
@@ -641,7 +554,7 @@
     </section>
 
     <div class="container mt-5 mb-0">
-        <h1 class="text-center fw-bold">TENTANG KAMI</h1>
+        <h1 class="text-center fw-bold" style="color: #004d00">TENTANG KAMI</h1>
     </div>
     <section class="about-section">
         <div class="container">
@@ -667,7 +580,7 @@
                         <li class="mb-2"><i class="bi bi-check-circle"></i> Pembinaan akhlak & karakter santri</li>
                         <li class="mb-2"><i class="bi bi-check-circle"></i> Lingkungan aman & kondusif</li>
                     </ul>
-                    <a href="#" class="btn btn-outline-info mt-2 px-4 py-2 reveal delay-3 about-btn">
+                    <a href="#" class="btn mt-2 px-4 py-2 reveal delay-3 about-btn">
                         Selengkapnya
                         <i class="bi bi-arrow-right ms-2"></i>
                     </a>
@@ -681,7 +594,7 @@
             <div class="row g-4 align-items-stretch">
                 <div class="col-lg-7 reveal reveal-map">
                     <h5 class="section-title mb-3">Peta Lokasi</h5>
-                    <hr>
+                    <hr style="color: #ffffff; border-top: 3px solid">
                     <div class="map-wrapper">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.8471989072054!2d116.1890462744468!3d-8.610665187471678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdb8f8c5efbd9b%3A0xdc79eab95cb0b5a9!2sPonpes%20Darul%20Hikmah%20NW%20Tanak%20Beak%20Narmada!5e0!3m2!1sid!2sid!4v1769839147274"
@@ -691,9 +604,9 @@
                 </div>
                 <div class="col-lg-5 reveal reveal-stat">
                     <h5 class="section-title mb-3">Statistik Ringkas</h5>
-                    <hr>
+                    <hr style="color: #ffffff; border-top: 3px solid">
                     <div class="stat-card mb-4 reveal delay-1">
-                        <div class="stat-icon bg-info">
+                        <div class="stat-icon ">
                             <i class="bi bi-people-fill"></i>
                         </div>
                         <div>
@@ -703,7 +616,7 @@
                         </div>
                     </div>
                     <div class="stat-card mb-4 reveal delay-2">
-                        <div class="stat-icon bg-success">
+                        <div class="stat-icon ">
                             <i class="bi bi-mortarboard-fill"></i>
                         </div>
                         <div>
