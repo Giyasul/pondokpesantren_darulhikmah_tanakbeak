@@ -5,19 +5,34 @@
 @section('konten')
 
     <style>
+        /* HEADER - Redup & Elegan */
         .page-header {
             background:
-                linear-gradient(to bottom, rgba(0, 0, 0, .55), rgba(0, 0, 0, .9)),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)),
                 url('{{ asset('image/pondok.jpeg') }}') center/cover no-repeat;
-            padding: 120px 0;
-            text-align: center;
+            padding: 180px 0;
             color: #fff;
+            text-align: center;
+            border-bottom: 5px solid #D4AF37;
         }
 
         .page-header h1 {
             font-weight: 800;
-            font-size: clamp(2.2rem, 4vw, 3.2rem);
-            text-shadow: 0 0 14px rgba(20, 209, 199, .6);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: #ffffff;
+            text-shadow:
+                0 0 6px rgba(255, 255, 255, 0.45),
+                0 0 14px rgba(212, 175, 55, 0.35),
+                2px 2px 10px rgba(0, 0, 0, 0.85);
+        }
+
+        .page-header p {
+            font-weight: 500;
+            font-size: 1.1rem;
+            text-shadow:
+                0 0 6px rgba(255, 255, 255, 0.45),
+                0 0 14px rgba(212, 175, 55, 0.35),
+                2px 2px 10px rgba(0, 0, 0, 0.85);
         }
 
         .visi-card {

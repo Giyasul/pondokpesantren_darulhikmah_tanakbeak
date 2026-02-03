@@ -10,19 +10,30 @@
             background:
                 linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)),
                 url('{{ asset('image/pondok.jpeg') }}') center/cover no-repeat;
-            padding: 140px 0;
+            padding: 180px 0;
             color: #fff;
             text-align: center;
-            border-bottom: 5px solid #D4AF37; 
+            border-bottom: 5px solid #D4AF37;
         }
 
         .page-header h1 {
             font-weight: 800;
             font-size: clamp(2.2rem, 5vw, 3.5rem);
             /* Warna diubah jadi putih dengan glow emas tipis */
-            color: #ffffff; 
-            text-shadow: 0 0 70px rgba(212, 175, 55, 0.6), 2px 2px 4px rgba(0, 0, 0, 0.5);
-            
+            color: #ffffff;
+            text-shadow:
+                0 0 6px rgba(255, 255, 255, 0.45),
+                0 0 14px rgba(212, 175, 55, 0.35),
+                2px 2px 10px rgba(0, 0, 0, 0.85);
+        }
+
+        .page-header p {
+            font-weight: 500;
+            font-size: 1.1rem;
+            text-shadow:
+                0 0 6px rgba(255, 255, 255, 0.45),
+                0 0 14px rgba(212, 175, 55, 0.35),
+                2px 2px 10px rgba(0, 0, 0, 0.85);
         }
 
         /* CARD KONTEN */
@@ -30,7 +41,7 @@
             background: #ffffff;
             border-radius: 25px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            margin-top: 25px; 
+            margin-top: 25px;
             position: relative;
             z-index: 10;
             border: 1px solid #eee;
@@ -69,7 +80,7 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background: linear-gradient(to bottom, #004d00, #D4AF37); 
+            background: linear-gradient(to bottom, #004d00, #D4AF37);
             border-radius: 10px;
         }
 
@@ -85,7 +96,7 @@
             top: 5px;
             width: 20px;
             height: 20px;
-            background: #D4AF37; 
+            background: #D4AF37;
             border: 4px solid #ffffff;
             border-radius: 50%;
             box-shadow: 0 0 0 2px #004d00;
@@ -117,8 +128,13 @@
         }
 
         @media (max-width: 768px) {
-            .page-header { padding: 100px 0; }
-            .history-card { margin-top: 20px; } 
+            .page-header {
+                padding: 100px 0;
+            }
+
+            .history-card {
+                margin-top: 20px;
+            }
         }
     </style>
 
@@ -266,7 +282,9 @@
                     entry.target.classList.add('show');
                 }
             });
-        }, { threshold: 0.1 });
+        }, {
+            threshold: 0.1
+        });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
