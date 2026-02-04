@@ -119,6 +119,84 @@
         .delay-3 {
             transition-delay: .45s
         }
+
+        /* LIGHTBOX */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transition: .35s ease;
+            z-index: 2000;
+        }
+
+        .lightbox.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 16px;
+            box-shadow:
+                0 0 0 1px rgba(212, 175, 55, .35),
+                0 0 18px rgba(212, 175, 55, .35),
+                0 25px 50px rgba(0, 0, 0, .85);
+            animation: zoomIn .35s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(.85);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            font-size: 34px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .lightbox-download {
+            margin-top: 18px;
+            padding: 10px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            letter-spacing: .3px;
+
+            color: #0D6B0D;
+            background: white;
+            border: 1.8px solid #0D6B0D;
+
+            text-decoration: none;
+            transition:
+                background-color .35s ease,
+                color .35s ease,
+                box-shadow .45s cubic-bezier(.22, 1, .36, 1),
+                transform .45s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .lightbox-download:hover {
+            background: #0D6B0D;
+            color: #ffffff;
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 14px 36px rgba(13, 107, 13, .45);
+        }
     </style>
 
     <!-- HEADER -->
@@ -155,13 +233,23 @@
                 @foreach ($galeri as $i => $g)
                     <div class="col-lg-4 col-md-6 reveal delay-{{ ($i % 3) + 1 }}">
                         <div class="gallery-item">
-                            <img src="{{ asset('image/' . $g[0]) }}">
+                            <img src="{{ asset('image/' . $g[0]) }}" class="gallery-img"
+                                data-src="{{ asset('image/' . $g[0]) }}">
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
     </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="">
+        <a id="lightbox-download" class="lightbox-download" download>
+            <i class="bi bi-download me-1"></i> Download
+        </a>
+    </div>
 
     <script>
         const reveals = document.querySelectorAll('.reveal');
@@ -174,5 +262,29 @@
         });
         reveals.forEach(el => observer.observe(el));
     </script>
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const downloadBtn = document.getElementById('lightbox-download');
+        const closeBtn = document.querySelector('.lightbox-close');
 
+        document.querySelectorAll('.gallery-img').forEach(img => {
+            img.addEventListener('click', () => {
+                const src = img.getAttribute('data-src');
+                lightboxImg.src = src;
+                downloadBtn.href = src;
+                lightbox.classList.add('show');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('show');
+        });
+
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('show');
+            }
+        });
+    </script>
 @endsection

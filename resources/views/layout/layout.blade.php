@@ -286,8 +286,8 @@
                         </a>
                         <a href="https://www.youtube.com/@Pondokn4gadarulhikmah" target="_blank" rel="noopener"
                             aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                        <a href="https://www.instagram.com/pondoknaga_darulhikmah" target="_blank"
-                            rel="noopener"aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.instagram.com/pondoknaga_darulhikmah" target="_blank" rel="noopener"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                         <a href="https://web.facebook.com/Pondoknaga120212#" target="_blank" rel="noopener"
                             aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                         <a href="https://www.tiktok.com/@pondoknagadarulhikmah?_r=1&_t=ZS-93d1Crb5n9M" target="_blank"
@@ -319,7 +319,10 @@
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Kontak</a></li>
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0">PPDB</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Lokasi</a></li>
+                        <li class="nav-item mb-2"> <a href="https://maps.app.goo.gl/f8YBHo1cph4yKmiB7"
+                                target="_blank" rel="noopener" class="nav-link p-0">
+                                Lokasi
+                            </a></li>
                     </ul>
                 </div>
             </div>
