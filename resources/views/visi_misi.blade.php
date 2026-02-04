@@ -5,7 +5,7 @@
 @section('konten')
 
     <style>
-        /* HEADER - Redup & Elegan */
+        /* HEADER - Konsisten dengan Sejarah */
         .page-header {
             background:
                 linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)),
@@ -35,162 +35,173 @@
                 2px 2px 10px rgba(0, 0, 0, 0.85);
         }
 
+        /* CARD KONTEN - Mengikuti style Sejarah */
         .visi-card {
-            background: rgba(34, 46, 53, .96);
-            border-radius: 26px;
-            box-shadow:
-                0 0 0 1px rgba(255, 255, 255, .15),
-                0 0 25px rgba(20, 209, 199, .25),
-                0 25px 60px rgba(0, 0, 0, .75);
-            color: #E0F7F5;
+            background: #ffffff;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 25px;
+            position: relative;
+            z-index: 10;
+            border: 1px solid #eee;
+            color: #333;
         }
 
-        .visi-title {
-            color: #ffffff;
+        /* Judul Section - Hijau NW & Garis Emas */
+        .section-title {
+            color: #004d00;
             font-weight: 800;
-            letter-spacing: .6px;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
-        .divider {
-            width: 90px;
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60%;
             height: 4px;
-            background: #14D1C7;
-            border-radius: 99px;
-            margin: 12px auto 30px;
-            box-shadow: 0 0 16px rgba(20, 209, 199, .8);
+            background: #D4AF37;
+            margin: 8px auto 0;
+            border-radius: 10px;
+        }
+
+        /* LAYOUT 2 KOLOM */
+        .row-top {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 50px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 40px;
+        }
+
+        .col-visi {
+            flex: 1;
+            text-align: center;
+        }
+
+        .col-misi {
+            flex: 1.5;
+            text-align: center; /* Membuat judul Misi ke tengah */
+        }
+
+        .misi-list {
+            padding-left: 20px;
+            text-align: justify; /* Teks list tetap rata kiri-kanan */
+            line-height: 1.8;
+            margin-top: 20px;
+            display: inline-block; /* Membantu list tetap proporsional saat parent center */
         }
 
         .misi-list li {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
+        }
+
+        /* PENJELASAN VISI */
+        .penjelasan-box {
+            text-align: justify;
+        }
+
+        .point-title {
+            color: #004d00;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-top: 30px;
+            display: block;
+        }
+
+        .penjelasan-box p {
             line-height: 1.9;
+            margin-top: 5px;
         }
 
-        .visi-point h5 {
-            color: #14D1C7;
-            font-weight: 700;
-            margin-top: 28px;
-        }
-
+        /* ANIMASI */
         .reveal {
             opacity: 0;
-            transform: translateY(45px);
-            transition: all .9s ease;
+            transform: translateY(40px);
+            transition: all .8s ease;
         }
 
         .reveal.show {
             opacity: 1;
             transform: translateY(0);
         }
+
+        @media (max-width: 992px) {
+            .row-top {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 
-    <!-- HEADER -->
     <section class="page-header">
         <div class="container reveal">
             <h1>Visi & Misi</h1>
-            <p class="mt-2">
-                Pondok Pesantren Darul Hikmah NW
-            </p>
+            <p>Pondok Pesantren Darul Hikmah NW Tanak Beak</p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-5">
+    <section class="py-4" style="background-color: #f4f7f4;">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-10 col-xl-9 reveal">
+                <div class="col-lg-11 col-xl-10 reveal">
 
                     <div class="visi-card p-4 p-md-5">
+                        
+                        <div class="row-top">
+                            <div class="col-visi">
+                                <h2 class="section-title">Visi</h2>
+                                <p class="mt-4 fs-5 fw-bold" style="color: #004d00;">
+                                    Bekerja, Belajar, Jujur, Ikhlas
+                                </p>
+                            </div>
 
-                        <!-- VISI -->
-                        <div class="text-center">
-                            <h3 class="visi-title">VISI</h3>
-                            <div class="divider"></div>
-                            <p class="fs-5 fw-semibold">
-                                Bekerja, Belajar, Jujur, Ikhlas
+                            <div class="col-misi">
+                                <h2 class="section-title">Misi</h2>
+                                <div class="text-start"> <ol class="misi-list">
+                                        <li>Menciptakan santri dan santriwati yang memiliki karakter moral dan kompetensi kinerja yang seimbang.</li>
+                                        <li>Menciptakan santri dan santriwati yang mampu berpikir kritis, kreatif, komunikatif, dan kolaboratif.</li>
+                                        <li>Menciptakan santri dan santriwati yang terbuka wawasannya dalam literasi baca, budaya, teknologi, dan ekonomi.</li>
+                                        <li>Menjadikan Darul Hikmah sebagai lembaga pendidikan dan pengajaran yang <strong>PRIMA</strong> (Panutan, Rapi, Indah, Mencerdaskan, dan Amanah).</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="penjelasan-box">
+                            <div class="text-center mb-4">
+                                <h2 class="section-title">Penjelasan Visi</h2>
+                            </div>
+
+                            <span class="point-title">A. BEKERJA</span>
+                            <p>
+                                Konsep kerja mengandung empat hal, yaitu kerja keras, kerja cerdas, kerja ikhlas, dan kerja tuntas. Nilai kerja ini dapat terwujud apabila didukung oleh empat kecerdasan: kecerdasan fisik, kecerdasan intelektual, kecerdasan emosional, dan kecerdasan spiritual. Kecerdasan fisik berfungsi menjaga kesehatan jasmani agar aktivitas berjalan optimal. Kecerdasan intelektual berkaitan dengan kemampuan berpikir dan memahami ilmu pengetahuan. Kecerdasan emosional berperan dalam hubungan sosial dan muamalah, sedangkan kecerdasan spiritual berkaitan erat dengan keyakinan dan pengamalan ajaran Islam yang berlandaskan keimanan kepada Allah SWT.
+                            </p>
+
+                            <span class="point-title">B. BELAJAR</span>
+                            <p>
+                                Belajar adalah usaha memperoleh ilmu dan kepandaian serta proses berkelanjutan sepanjang hayat. Belajar dimaknai sebagai upaya menggali ilmu-ilmu Allah, baik yang tersurat maupun tersirat, baik kauniyah maupun qauliyah, sebagai bekal kehidupan dunia dan akhirat.
+                            </p>
+
+                            <span class="point-title">C. JUJUR</span>
+                            <p>
+                                Jujur adalah kesesuaian antara perkataan dan perbuatan. Seseorang dikatakan jujur apabila berkata dan bertindak sesuai dengan kebenaran. Kejujuran harus mewarnai seluruh aspek kehidupan, baik dalam pikiran, ucapan, maupun perbuatan.
+                            </p>
+
+                            <span class="point-title">D. IKHLAS</span>
+                            <p>
+                                Ikhlas merupakan sikap tulus dalam beramal yang semata-mata ditujukan untuk memperoleh ridha Allah SWT. Amal ibadah tidak akan diterima tanpa keikhlasan. Ikhlas berhubungan erat dengan niat dan mencerminkan kebersihan hati, ketulusan, serta kejujuran dalam keyakinan dan perbuatan yang hanya ditujukan kepada Allah SWT.
                             </p>
                         </div>
 
-                        <!-- MISI -->
-                        <div class="mt-5">
-                            <h3 class="visi-title text-center">MISI</h3>
-                            <div class="divider"></div>
-
-                            <ol class="misi-list">
-                                <li>
-                                    Menciptakan santri dan santriwati yang memiliki karakter moral
-                                    dan kompetensi kinerja yang seimbang.
-                                </li>
-                                <li>
-                                    Menciptakan santri dan santriwati yang mampu berpikir kritis,
-                                    kreatif, komunikatif, dan kolaboratif.
-                                </li>
-                                <li>
-                                    Menciptakan santri dan santriwati yang terbuka wawasannya
-                                    dalam literasi baca, budaya, teknologi, dan ekonomi.
-                                </li>
-                                <li>
-                                    Menjadikan Darul Hikmah sebagai lembaga pendidikan dan
-                                    pengajaran yang <strong>PRIMA</strong>
-                                    (Panutan, Rapi, Indah, Mencerdaskan, dan Amanah).
-                                </li>
-                            </ol>
-                        </div>
-
-                        <!-- PENJELASAN VISI -->
-                        <div class="visi-point mt-5">
-                            <h3 class="visi-title text-center">PENJELASAN VISI</h3>
-                            <div class="divider"></div>
-
-                            <h5>A. BEKERJA</h5>
-                            <p>
-                                Konsep kerja mengandung empat hal, yaitu kerja keras, kerja cerdas,
-                                kerja ikhlas, dan kerja tuntas. Nilai kerja ini dapat terwujud apabila
-                                didukung oleh empat kecerdasan: kecerdasan fisik, kecerdasan intelektual,
-                                kecerdasan emosional, dan kecerdasan spiritual.
-                                Kecerdasan fisik berfungsi menjaga kesehatan jasmani agar aktivitas
-                                berjalan optimal. Kecerdasan intelektual berkaitan dengan kemampuan
-                                berpikir dan memahami ilmu pengetahuan. Kecerdasan emosional berperan
-                                dalam hubungan sosial dan muamalah, sedangkan kecerdasan spiritual
-                                berkaitan erat dengan keyakinan dan pengamalan ajaran Islam
-                                yang berlandaskan keimanan kepada Allah SWT.
-                            </p>
-
-                            <h5>B. BELAJAR</h5>
-                            <p>
-                                Belajar adalah usaha memperoleh ilmu dan kepandaian serta proses
-                                berkelanjutan sepanjang hayat. Belajar dimaknai sebagai upaya menggali
-                                ilmu-ilmu Allah, baik yang tersurat maupun tersirat, baik kauniyah
-                                maupun qauliyah, sebagai bekal kehidupan dunia dan akhirat.
-                            </p>
-
-                            <h5>C. JUJUR</h5>
-                            <p>
-                                Jujur adalah kesesuaian antara perkataan dan perbuatan.
-                                Seseorang dikatakan jujur apabila berkata dan bertindak sesuai
-                                dengan kebenaran. Kejujuran harus mewarnai seluruh aspek
-                                kehidupan, baik dalam pikiran, ucapan, maupun perbuatan.
-                            </p>
-
-                            <h5>D. IKHLAS</h5>
-                            <p>
-                                Ikhlas merupakan sikap tulus dalam beramal yang semata-mata
-                                ditujukan untuk memperoleh ridha Allah SWT.
-                                Amal ibadah tidak akan diterima tanpa keikhlasan.
-                                Ikhlas berhubungan erat dengan niat dan mencerminkan
-                                kebersihan hati, ketulusan, serta kejujuran dalam keyakinan
-                                dan perbuatan yang hanya ditujukan kepada Allah SWT.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
+                    </div> </div>
             </div>
         </div>
     </section>
 
     <script>
-        const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -198,10 +209,10 @@
                 }
             });
         }, {
-            threshold: 0.15
+            threshold: 0.1
         });
 
-        reveals.forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 
 @endsection
