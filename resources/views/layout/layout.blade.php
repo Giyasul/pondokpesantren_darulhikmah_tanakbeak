@@ -280,7 +280,10 @@
                         Membina generasi qur'ani, berakhlak mulia, dan berwawasan luas.
                     </p>
                     <div class="footer-social ">
-                        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://wa.me/6283129793242?text=Assalamualaikum%20saya%20ingin%20bertanya%20tentang%20PPDB"
+                            target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
                         <a href="https://www.youtube.com/@Pondokn4gadarulhikmah" target="_blank" rel="noopener"
                             aria-label="YouTube"><i class="bi bi-youtube"></i></a>
                         <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
