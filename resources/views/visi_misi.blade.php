@@ -83,15 +83,18 @@
 
         .col-misi {
             flex: 1.5;
-            text-align: center; /* Membuat judul Misi ke tengah */
+            text-align: center;
+            /* Membuat judul Misi ke tengah */
         }
 
         .misi-list {
             padding-left: 20px;
-            text-align: justify; /* Teks list tetap rata kiri-kanan */
+            text-align: justify;
+            /* Teks list tetap rata kiri-kanan */
             line-height: 1.8;
             margin-top: 20px;
-            display: inline-block; /* Membantu list tetap proporsional saat parent center */
+            display: inline-block;
+            /* Membantu list tetap proporsional saat parent center */
         }
 
         .misi-list li {
@@ -149,7 +152,7 @@
                 <div class="col-lg-11 col-xl-10 reveal">
 
                     <div class="visi-card p-4 p-md-5">
-                        
+
                         <div class="row-top">
                             <div class="col-visi">
                                 <h2 class="section-title">Visi</h2>
@@ -160,11 +163,16 @@
 
                             <div class="col-misi">
                                 <h2 class="section-title">Misi</h2>
-                                <div class="text-start"> <ol class="misi-list">
-                                        <li>Menciptakan santri dan santriwati yang memiliki karakter moral dan kompetensi kinerja yang seimbang.</li>
-                                        <li>Menciptakan santri dan santriwati yang mampu berpikir kritis, kreatif, komunikatif, dan kolaboratif.</li>
-                                        <li>Menciptakan santri dan santriwati yang terbuka wawasannya dalam literasi baca, budaya, teknologi, dan ekonomi.</li>
-                                        <li>Menjadikan Darul Hikmah sebagai lembaga pendidikan dan pengajaran yang <strong>PRIMA</strong> (Panutan, Rapi, Indah, Mencerdaskan, dan Amanah).</li>
+                                <div class="text-start">
+                                    <ol class="misi-list">
+                                        <li>Menciptakan santri dan santriwati yang memiliki karakter moral dan kompetensi
+                                            kinerja yang seimbang.</li>
+                                        <li>Menciptakan santri dan santriwati yang mampu berpikir kritis, kreatif,
+                                            komunikatif, dan kolaboratif.</li>
+                                        <li>Menciptakan santri dan santriwati yang terbuka wawasannya dalam literasi baca,
+                                            budaya, teknologi, dan ekonomi.</li>
+                                        <li>Menjadikan Darul Hikmah sebagai lembaga pendidikan dan pengajaran yang
+                                            <strong>PRIMA</strong> (Panutan, Rapi, Indah, Mencerdaskan, dan Amanah).</li>
                                     </ol>
                                 </div>
                             </div>
@@ -177,26 +185,41 @@
 
                             <span class="point-title">A. BEKERJA</span>
                             <p>
-                                Konsep kerja mengandung empat hal, yaitu kerja keras, kerja cerdas, kerja ikhlas, dan kerja tuntas. Nilai kerja ini dapat terwujud apabila didukung oleh empat kecerdasan: kecerdasan fisik, kecerdasan intelektual, kecerdasan emosional, dan kecerdasan spiritual. Kecerdasan fisik berfungsi menjaga kesehatan jasmani agar aktivitas berjalan optimal. Kecerdasan intelektual berkaitan dengan kemampuan berpikir dan memahami ilmu pengetahuan. Kecerdasan emosional berperan dalam hubungan sosial dan muamalah, sedangkan kecerdasan spiritual berkaitan erat dengan keyakinan dan pengamalan ajaran Islam yang berlandaskan keimanan kepada Allah SWT.
+                                Konsep kerja mengandung empat hal, yaitu kerja keras, kerja cerdas, kerja ikhlas, dan kerja
+                                tuntas. Nilai kerja ini dapat terwujud apabila didukung oleh empat kecerdasan: kecerdasan
+                                fisik, kecerdasan intelektual, kecerdasan emosional, dan kecerdasan spiritual. Kecerdasan
+                                fisik berfungsi menjaga kesehatan jasmani agar aktivitas berjalan optimal. Kecerdasan
+                                intelektual berkaitan dengan kemampuan berpikir dan memahami ilmu pengetahuan. Kecerdasan
+                                emosional berperan dalam hubungan sosial dan muamalah, sedangkan kecerdasan spiritual
+                                berkaitan erat dengan keyakinan dan pengamalan ajaran Islam yang berlandaskan keimanan
+                                kepada Allah SWT.
                             </p>
 
                             <span class="point-title">B. BELAJAR</span>
                             <p>
-                                Belajar adalah usaha memperoleh ilmu dan kepandaian serta proses berkelanjutan sepanjang hayat. Belajar dimaknai sebagai upaya menggali ilmu-ilmu Allah, baik yang tersurat maupun tersirat, baik kauniyah maupun qauliyah, sebagai bekal kehidupan dunia dan akhirat.
+                                Belajar adalah usaha memperoleh ilmu dan kepandaian serta proses berkelanjutan sepanjang
+                                hayat. Belajar dimaknai sebagai upaya menggali ilmu-ilmu Allah, baik yang tersurat maupun
+                                tersirat, baik kauniyah maupun qauliyah, sebagai bekal kehidupan dunia dan akhirat.
                             </p>
 
                             <span class="point-title">C. JUJUR</span>
                             <p>
-                                Jujur adalah kesesuaian antara perkataan dan perbuatan. Seseorang dikatakan jujur apabila berkata dan bertindak sesuai dengan kebenaran. Kejujuran harus mewarnai seluruh aspek kehidupan, baik dalam pikiran, ucapan, maupun perbuatan.
+                                Jujur adalah kesesuaian antara perkataan dan perbuatan. Seseorang dikatakan jujur apabila
+                                berkata dan bertindak sesuai dengan kebenaran. Kejujuran harus mewarnai seluruh aspek
+                                kehidupan, baik dalam pikiran, ucapan, maupun perbuatan.
                             </p>
 
                             <span class="point-title">D. IKHLAS</span>
                             <p>
-                                Ikhlas merupakan sikap tulus dalam beramal yang semata-mata ditujukan untuk memperoleh ridha Allah SWT. Amal ibadah tidak akan diterima tanpa keikhlasan. Ikhlas berhubungan erat dengan niat dan mencerminkan kebersihan hati, ketulusan, serta kejujuran dalam keyakinan dan perbuatan yang hanya ditujukan kepada Allah SWT.
+                                Ikhlas merupakan sikap tulus dalam beramal yang semata-mata ditujukan untuk memperoleh ridha
+                                Allah SWT. Amal ibadah tidak akan diterima tanpa keikhlasan. Ikhlas berhubungan erat dengan
+                                niat dan mencerminkan kebersihan hati, ketulusan, serta kejujuran dalam keyakinan dan
+                                perbuatan yang hanya ditujukan kepada Allah SWT.
                             </p>
                         </div>
 
-                    </div> </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

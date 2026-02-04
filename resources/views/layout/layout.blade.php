@@ -286,9 +286,12 @@
                         </a>
                         <a href="https://www.youtube.com/@Pondokn4gadarulhikmah" target="_blank" rel="noopener"
                             aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.instagram.com/pondoknaga_darulhikmah" target="_blank"
+                            rel="noopener"aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://web.facebook.com/Pondoknaga120212#" target="_blank" rel="noopener"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.tiktok.com/@pondoknagadarulhikmah?_r=1&_t=ZS-93d1Crb5n9M" target="_blank"
+                            rel="noopener" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
                     </div>
                     <p class="text-body-secondary mt-3">© 2026 Ponpes Darul Hikmah.</p>
                 </div>
