@@ -228,7 +228,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarProfil">
                             <li><a class="dropdown-item" href="{{ url('/sejarah') }}">Sejarah</a></li>
                             <li><a class="dropdown-item" href="{{ url('/visi-misi') }}">Visi & Misi</a></li>
-                            <li><a class="dropdown-item" href="#">Tenaga Pendidik</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/tenaga-pendidik') }}">Tenaga Pendidik</a></li>
                             <li><a class="dropdown-item" href="#">Ekskul</a></li>
                             <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
                         </ul>

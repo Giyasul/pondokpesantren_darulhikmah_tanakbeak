@@ -14,3 +14,6 @@ Route::get('/sejarah', function () {
 Route::get('/visi-misi', function () {
     return view('visi_misi');
 });
+Route::get('/tenaga-pendidik', function () {
+    return view('tenaga_pendidik');
+});
