@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\PerpustakaanController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/sejarah', function () {
@@ -17,3 +18,6 @@ Route::get('/', [BeritaController::class, 'index']);
 Route::get('/galeri', [GaleriController::class, 'index']);
 Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita');
 Route::get('/berita', [BeritaController::class, 'semua'])->name('berita.semua');
+
+
+Route::get('/perpustakaan', [PerpustakaanController::class, 'index'])->name('perpustakaan.index');
