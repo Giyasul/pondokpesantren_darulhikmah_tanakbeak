@@ -172,7 +172,8 @@
                                         <li>Menciptakan santri dan santriwati yang terbuka wawasannya dalam literasi baca,
                                             budaya, teknologi, dan ekonomi.</li>
                                         <li>Menjadikan Darul Hikmah sebagai lembaga pendidikan dan pengajaran yang
-                                            <strong>PRIMA</strong> (Panutan, Rapi, Indah, Mencerdaskan, dan Amanah).</li>
+                                            <strong>PRIMA</strong> (Panutan, Rapi, Indah, Mencerdaskan, dan Amanah).
+                                        </li>
                                     </ol>
                                 </div>
                             </div>

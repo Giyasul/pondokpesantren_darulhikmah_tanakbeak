@@ -3,7 +3,8 @@
 @section('konten')
 
     <style>
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
             background-color: #ffffff;
         }
@@ -43,7 +44,7 @@
         .detail-image img {
             width: 100%;
             border-radius: 18px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
         .image-caption {
@@ -113,7 +114,7 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .back-btn:hover {
             color: #D4AF37;
             transform: translateX(-5px);
@@ -130,8 +131,13 @@
             transform: translateY(0);
         }
 
-        .delay-1 { transition-delay: .15s }
-        .delay-2 { transition-delay: .3s }
+        .delay-1 {
+            transition-delay: .15s
+        }
+
+        .delay-2 {
+            transition-delay: .3s
+        }
     </style>
 
     <section class="detail-section">
@@ -140,9 +146,8 @@
 
                 {{-- Tombol Kembali - Diarahkan ke halaman berita utama --}}
                 <div class="mb-4 reveal">
-                    <a href="{{ url('/berita') }}" class="back-btn small">
-                        <i class="bi bi-arrow-left"></i> KEMBALI KE BERITA
-                    </a>
+                    <a href="{{ url()->previous() }}" class="back-btn small">
+                        <i class="bi bi-arrow-left"></i> KEMBALI</a>
                 </div>
 
                 <div class="news-header reveal">
@@ -178,13 +183,15 @@
                                 <a href="{{ route('berita', $item->id) }}" class="promo-card d-block">
                                     <div class="position-relative">
                                         @if ($item->gambar)
-                                            <img src="{{ asset('storage/' . $item->gambar) }}" class="promo-img" alt="{{ $item->judul }}">
+                                            <img src="{{ asset('storage/' . $item->gambar) }}" class="promo-img"
+                                                alt="{{ $item->judul }}">
                                         @else
                                             <img src="{{ asset('image/pondok.jpeg') }}" class="promo-img" alt="Default">
                                         @endif
                                     </div>
                                     <div class="promo-author">{{ $item->penulis }}</div>
-                                    <div class="promo-headline">{{ \Illuminate\Support\Str::limit($item->judul, 50) }}</div>
+                                    <div class="promo-headline">{{ \Illuminate\Support\Str::limit($item->judul, 50) }}
+                                    </div>
                                 </a>
                             </div>
                         @endforeach
@@ -203,7 +210,9 @@
                     entry.target.classList.add('show');
                 }
             });
-        }, { threshold: 0.1 });
+        }, {
+            threshold: 0.1
+        });
         revealEls.forEach(el => revealObserver.observe(el));
     </script>
 
