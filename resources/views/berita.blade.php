@@ -1,101 +1,129 @@
 @extends('layout.layout')
-@section('judul', 'Semua Berita')
+@section('judul', 'Indeks Berita - Pondok Pesantren Darul Hikmah')
 @section('konten')
 
     <style>
-        html,
-        body {
-            overflow-x: hidden;
-        }
+        body { background-color: #f8f9fa; }
+        .berita-section { padding: 30px 0 60px; }
+        
+        /* Header Indeks */
+        .section-header { border-bottom: 2px solid #0D6B0D; margin-bottom: 25px; }
+        .section-header h2 { font-weight: 800; color: #333; font-size: 1.4rem; text-transform: uppercase; margin-bottom: 8px; }
 
-        .berita-section {
-            padding: 70px 0;
-        }
-
-        .berita-card {
-            border: none;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            transition: 0.3s;
+        /* Card Wrapper - Memastikan tinggi kartu sama (Equal Height) */
+        .berita-card { 
+            border: none; 
+            background: #fff; /* Tambah background putih agar lebih bersih di mobile */
+            transition: all 0.3s ease;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
-        .berita-card:hover {
-            transform: translateY(-6px);
-        }
-
-        .berita-img {
-            height: 220px;
-            object-fit: cover;
+        
+        .img-wrapper {
+            position: relative;
             width: 100%;
+            aspect-ratio: 16/9; /* Menjaga rasio gambar tetap konsisten */
+            overflow: hidden;
         }
 
-        .berita-title {
-            font-weight: 700;
-            font-size: 18px;
-            min-height: 50px;
+        .berita-img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.5s ease;
         }
 
-        .berita-meta {
-            font-size: 13px;
-            color: #777;
+        /* Tipografi & Konten */
+        .berita-body { 
+            padding: 15px; 
+            flex-grow: 1; /* Membuat body mengisi sisa ruang kartu */
+            display: flex;
+            flex-direction: column;
         }
 
-        .berita-excerpt {
-            font-size: 14px;
-            color: #555;
+        .category-label { 
+            color: #d10000; 
+            font-weight: 700; 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            margin-bottom: 5px;
+            display: block;
         }
 
-        .btn-baca {
-            border-radius: 30px;
-            padding: 6px 18px;
-            font-size: 14px;
+        .berita-title { 
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            line-height: 1.4;
+            color: #222;
+            margin-bottom: 10px;
+            text-decoration: none;
+            /* Potong teks jika judul terlalu panjang (3 baris) */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .berita-title:hover { color: #0D6B0D; }
+
+        .berita-meta { font-size: 0.75rem; color: #888; margin-bottom: 10px; margin-top: auto; }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .berita-section { padding: 20px 0 40px; }
+            .berita-title { font-size: 1rem; }
+            .section-header h2 { font-size: 1.2rem; }
+            /* Mengurangi padding pada col untuk mobile agar kartu tidak terlalu sempit */
+            .row.g-4 { --bs-gutter-x: 1rem; }
         }
     </style>
 
     <div class="container berita-section">
-        <div class="row">
+        <div class="section-header">
+            <h2>Berita</h2>
+        </div>
 
+        <div class="row g-4">
             @foreach ($beritas as $berita)
-                <div class="col-md-4 mb-4">
-                    <div class="card berita-card">
-
+                <div class="col-12 col-md-6 col-lg-4"> {{-- 1 kolom di mobile, 2 di tablet, 3 di desktop --}}
+                    <div class="berita-card">
                         {{-- Gambar --}}
-                        <img src="{{ asset('storage/' . $berita->gambar) }}" class="berita-img" alt="{{ $berita->judul }}">
+                        <a href="{{ route('berita', $berita->id) }}" class="img-wrapper">
+                            @if($berita->gambar)
+                                <img src="{{ asset('storage/' . $berita->gambar) }}" class="berita-img" alt="{{ $berita->judul }}">
+                            @else
+                                <img src="{{ asset('image/pondok.jpeg') }}" class="berita-img" alt="Default">
+                            @endif
+                        </a>
 
-                        <div class="card-body d-flex flex-column">
+                        <div class="berita-body">
+                            <span class="category-label">{{ $berita->penulis ?? 'Warta Pesantren' }}</span>
 
-                            {{-- Judul --}}
-                            <div class="berita-title mb-2">
-                                {{ Str::limit($berita->judul, 60) }}
-                            </div>
-
-                            {{-- Meta --}}
-                            <div class="berita-meta mb-2">
-                                {{ $berita->created_at->format('d M Y') }}
-                            </div>
-
-                            {{-- Isi Singkat --}}
-                            <div class="berita-excerpt mb-3">
-                                {{ Str::limit($berita->isi, 100) }}
-                            </div>
-
-                            {{-- Tombol --}}
-                            <a href="{{ url('/berita/' . $berita->id) }}" class="btn btn-success btn-baca mt-auto">
-                                Baca Selengkapnya →
+                            <a href="{{ route('berita', $berita->id) }}" class="berita-title">
+                                {{ $berita->judul }}
                             </a>
 
+                            <div class="berita-meta">
+                                <i class="bi bi-calendar3 me-1"></i> 
+                                {{ $berita->created_at->translatedFormat('d F Y') }}
+                            </div>
+
+                            <p class="text-muted small mb-0">
+                                {{ Str::limit(strip_tags($berita->isi), 85) }}
+                            </p>
                         </div>
                     </div>
                 </div>
             @endforeach
-
         </div>
 
         {{-- Pagination --}}
-        <div class="d-flex justify-content-center mt-4">
-            {{ $beritas->links() }}
+        <div class="d-flex justify-content-center mt-5">
+            {{ $beritas->links('pagination::bootstrap-5') }}
         </div>
     </div>
 

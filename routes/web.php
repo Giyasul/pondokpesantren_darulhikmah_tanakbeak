@@ -15,6 +15,5 @@ Route::get('/tenaga-pendidik', function () {
 });
 Route::get('/', [BeritaController::class, 'index']);
 Route::get('/galeri', [GaleriController::class, 'index']);
-Route::get('/berita/{id}', [BeritaController::class, 'show'])
-    ->name('berita');
-Route::get('/berita', [BeritaController::class, 'semua']);
+Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita'); // Sesuaikan nama ke 'berita'
+Route::get('/berita', [BeritaController::class, 'semua'])->name('berita.semua');

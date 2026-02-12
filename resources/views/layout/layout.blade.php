@@ -229,7 +229,7 @@
                             <li><a class="dropdown-item" href="{{ url('/sejarah') }}">Sejarah</a></li>
                             <li><a class="dropdown-item" href="{{ url('/visi-misi') }}">Visi & Misi</a></li>
                             <li><a class="dropdown-item" href="{{ url('/tenaga-pendidik') }}">Tenaga Pendidik</a></li>
-                            <li><a class="dropdown-item" href="#">Ekskul</a></li>
+                         
                             <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
                         </ul>
                     </li>
@@ -241,8 +241,8 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarLembaga">
                             <li><a class="dropdown-item" href="#">RA</a></li>
                             <li><a class="dropdown-item" href="#">MI</a></li>
-                            <li><a class="dropdown-item" href="#">MTS</a></li>
-                            <li><a class="dropdown-item" href="#">MA</a></li>
+                            <li><a class="dropdown-item" href="#">MTS & MA</a></li>
+                          
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -252,8 +252,10 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarInfo">
                             <li><a class="dropdown-item" href="#">PPDB</a></li>
-                            <li><a class="dropdown-item" href="#">Perpustakaan Digital</a></li>
                             <li><a class="dropdown-item" href="{{ url('/berita') }}">Berita & Artikel</a></li>
+                            <li><a class="dropdown-item" href="#">Ekskul</a></li>
+                            <li><a class="dropdown-item" href="#">Perpustakaan Digital</a></li>
+                           
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -310,8 +312,8 @@
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0">RA</a></li>
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0">MI</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">MTs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">MA</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">MTs & MA</a></li>
+                        
                     </ul>
                 </div>
                 <div class="col-6 col-md-2 mb-3">
