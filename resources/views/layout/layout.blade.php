@@ -253,7 +253,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarInfo">
                             <li><a class="dropdown-item" href="#">PPDB</a></li>
                             <li><a class="dropdown-item" href="#">Perpustakaan Digital</a></li>
-                            <li><a class="dropdown-item" href="#">Berita & Artikel</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/berita') }}">Berita & Artikel</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

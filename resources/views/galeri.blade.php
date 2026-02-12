@@ -39,7 +39,6 @@
 
         .gallery-item {
             position: relative;
-            height: 270px;
             border-radius: 18px;
             overflow: hidden;
             background: #000;
@@ -59,8 +58,6 @@
 
         .gallery-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
             transition: transform .6s ease;
         }
 
@@ -92,8 +89,7 @@
             position: absolute;
             inset: 0;
             border-radius: 18px;
-            box-shadow: inset 0 -4px 0 #D4AF37;
-            opacity: .95;
+            box-shadow: inset 0 -2px 0 rgba(212, 175, 55, 0.8);
             pointer-events: none;
         }
 
@@ -197,6 +193,41 @@
             transform: translateY(-2px) scale(1.04);
             box-shadow: 0 14px 36px rgba(13, 107, 13, .45);
         }
+
+        .gallery-masonry {
+            column-count: 4;
+            column-gap: 20px;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow:
+                0 0 0 1px rgba(212, 175, 55, .35),
+                0 0 16px rgba(212, 175, 55, .25),
+                0 18px 40px rgba(0, 0, 0, .65);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 18px;
+        }
+
+        @media (max-width: 992px) {
+            .gallery-masonry {
+                column-count: 3;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-masonry {
+                column-count: 3;
+            }
+        }
     </style>
 
     <!-- HEADER -->
@@ -219,25 +250,14 @@
                         title="YouTube Uploads" allowfullscreen>
                     </iframe>
                 </div>
-                @php
-                    $galeri = [
-                        ['pondok.jpeg'],
-                        ['pondok1.jpeg'],
-                        ['pondok2.jpeg'],
-                        ['pondok.jpeg'],
-                        ['pondok1.jpeg'],
-                        ['pondok2.jpeg'],
-                    ];
-                @endphp
-
-                @foreach ($galeri as $i => $g)
-                    <div class="col-lg-4 col-md-6 reveal delay-{{ ($i % 3) + 1 }}">
-                        <div class="gallery-item">
-                            <img src="{{ asset('image/' . $g[0]) }}" class="gallery-img"
-                                data-src="{{ asset('image/' . $g[0]) }}">
+                <div class="gallery-masonry">
+                    @foreach ($galeri as $g)
+                        <div class="gallery-item reveal">
+                            <img src="{{ asset('storage/' . $g->gambar) }}" class="gallery-img"
+                                data-src="{{ asset('storage/' . $g->gambar) }}">
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
         </div>
     </section>

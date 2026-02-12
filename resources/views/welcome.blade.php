@@ -502,54 +502,26 @@
                 </p>
             </div>
             <div class="row g-5 justify-content-center">
-                <!-- CARD 1 -->
-                <div class="col-lg-4 col-md-6 reveal delay-1">
-                    <div class="article-card">
-                        <img src="{{ asset('image/pondok1.jpeg') }}" alt="Berita">
-                        <div class="p-4">
-                            <h6>Kegiatan Santri Bulan Ramadhan</h6>
-                            <p class="mt-2">
-                                Berbagai kegiatan keislaman dan pembinaan karakter santri
-                                selama bulan suci Ramadhan.
-                            </p>
-                            <a href="#" class="btn mt-2 about-btn">
-                                Baca Selengkapnya
-                            </a>
+                @foreach ($berita as $index => $b)
+                    <div class="col-lg-4 col-md-6 reveal delay-{{ $index + 1 }}">
+                        <div class="article-card">
+                            @if ($b->gambar)
+                                <img src="{{ asset('storage/' . $b->gambar) }}" alt="{{ $b->judul }}">
+                            @else
+                                <img src="{{ asset('image/pondok.jpeg') }}" alt="Default">
+                            @endif
+                            <div class="p-4">
+                                <h6>{{ $b->judul }}</h6>
+                                <p class="mt-2">
+                                    {{ \Illuminate\Support\Str::limit($b->isi, 120) }}
+                                </p>
+                                <a href="{{ route('berita', $b->id) }}" class="btn mt-2 about-btn">
+                                    Baca Selengkapnya
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- CARD 2 -->
-                <div class="col-lg-4 col-md-6 reveal delay-2">
-                    <div class="article-card">
-                        <img src="{{ asset('image/pondok2.jpeg') }}" alt="Berita">
-                        <div class="p-4">
-                            <h6>Penerimaan Santri Baru 2026</h6>
-                            <p class="mt-2">
-                                Informasi resmi pendaftaran santri baru tahun ajaran
-                                2026/2027 pondok pesantren Darul Hikmah.
-                            </p>
-                            <a href="#" class="btn mt-2 about-btn">
-                                Baca Selengkapnya
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- CARD 3 -->
-                <div class="col-lg-4 col-md-6 reveal delay-3">
-                    <div class="article-card">
-                        <img src="{{ asset('image/pondok.jpeg') }}" alt="Berita">
-                        <div class="p-4">
-                            <h6>Prestasi Santri Darul Hikmah</h6>
-                            <p class="mt-2">
-                                Santri Darul Hikmah meraih prestasi di berbagai bidang
-                                akademik dan non-akademik.
-                            </p>
-                            <a href="#" class="btn mt-2 about-btn">
-                                Baca Selengkapnya
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
