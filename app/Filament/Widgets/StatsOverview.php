@@ -23,7 +23,6 @@ class StatsOverview extends StatsOverviewWidget
                 ->description('Jumlah galeri')
                 ->descriptionIcon('heroicon-m-photo')
                 ->color('info'),
-
             Stat::make('Total User', User::count())
                 ->description('Jumlah user')
                 ->descriptionIcon('heroicon-m-users')
@@ -31,7 +30,7 @@ class StatsOverview extends StatsOverviewWidget
             Stat::make('Total E-book', Perpustakaan::count())
                 ->description('Jumlah e-book')
                 ->descriptionIcon('heroicon-m-book-open')
-                ->color('primary'),
+                ->color('warning'),
         ];
     }
 }
