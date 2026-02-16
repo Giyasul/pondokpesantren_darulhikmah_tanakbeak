@@ -1,17 +1,8 @@
 [phases.setup]
-nixPkgs = [
-  "php83",
-  "php83Packages.composer",
-  "php83Extensions.intl",
-  "php83Extensions.zip",
-  "icu",
-  "libzip"
-]
+nixPkgs = ["php83", "php83Packages.composer"]
 
 [phases.install]
-cmds = [
-  "composer install --no-dev --optimize-autoloader"
-]
+cmds = ["composer install --no-dev --optimize-autoloader"]
 
 [start]
-cmd = "php -S 0.0.0.0:$PORT -t public"
+cmd = "php artisan serve --host=0.0.0.0 --port=$PORT"
