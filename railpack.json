@@ -1,19 +1,9 @@
 {
-    "phpExtensions": [
-        "ctype",
-        "curl",
-        "dom",
-        "fileinfo",
-        "filter",
-        "hash",
-        "mbstring",
-        "openssl",
-        "pcre",
-        "pdo",
-        "session",
-        "tokenizer",
-        "xml",
-        "intl",
-        "zip"
-    ]
+    "steps": {
+        "extensions": {
+            "commands": [
+                "install-php-extensions ctype curl dom fileinfo filter hash mbstring openssl pcre pdo session tokenizer xml intl zip"
+            ]
+        }
+    }
 }
