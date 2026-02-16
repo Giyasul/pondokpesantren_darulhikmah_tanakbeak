@@ -1,9 +1,0 @@
-{
-    "build": {
-        "builder": "nixpacks"
-    },
-    "deploy": {},
-    "php": {
-        "extensions": ["intl", "zip"]
-    }
-}
