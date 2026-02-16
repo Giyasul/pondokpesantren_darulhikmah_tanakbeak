@@ -8,5 +8,5 @@ class Galeri extends Model
 {
     protected $table = 'galeri';
 
-    protected $fillable = ['gambar'];
+    protected $fillable = ['gambar', 'folder'];
 }

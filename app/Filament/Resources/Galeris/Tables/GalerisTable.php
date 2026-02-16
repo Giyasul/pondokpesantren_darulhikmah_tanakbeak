@@ -15,15 +15,19 @@ class GalerisTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('folder')
             ->columns([
+                TextColumn::make('folder')
+                    ->label('Folder')
+                    ->searchable(),
                 TextColumn::make('nama_file')
                     ->label('Nama Gambar')
                     ->state(fn ($record) => basename($record->gambar)),
                 ImageColumn::make('gambar')
-                    ->searchable()
                     ->label('Gambar')
                     ->disk('public')
                     ->height(100)
+                    ->searchable()
                     ->circular(),
             ])
             ->filters([
