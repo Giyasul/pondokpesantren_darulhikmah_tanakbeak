@@ -16,7 +16,10 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
-RUN chmod -R 775 storage bootstrap/cache
+RUN mkdir -p database
+RUN touch database/database.sqlite
+RUN chmod -R 775 storage bootstrap/cache database
+RUN php artisan migrate --force || true
 RUN php artisan storage:link || true
 
 EXPOSE 8080
