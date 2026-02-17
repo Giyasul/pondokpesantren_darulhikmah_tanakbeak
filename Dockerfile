@@ -19,12 +19,11 @@ RUN composer install --no-dev --optimize-autoloader
 RUN mkdir -p database
 RUN touch database/database.sqlite
 RUN chmod -R 775 storage bootstrap/cache database
+
 RUN php artisan migrate --force || true
+RUN php artisan optimize:clear
+RUN php artisan filament:assets --force
 RUN php artisan storage:link || true
-RUN php artisan filament:assets
-RUN php artisan config:clear
-RUN php artisan route:clear
-RUN php artisan view:clear
 
 EXPOSE 8080
 
