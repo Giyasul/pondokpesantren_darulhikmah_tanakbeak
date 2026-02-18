@@ -3,6 +3,8 @@
 namespace App\Filament\Widgets;
 
 use App\Models\Berita;
+use App\Models\DataGuru;
+use App\Models\DataSiswa;
 use App\Models\Galeri;
 use App\Models\Perpustakaan;
 use App\Models\User;
@@ -31,6 +33,14 @@ class StatsOverview extends StatsOverviewWidget
                 ->description('Jumlah e-book')
                 ->descriptionIcon('heroicon-m-book-open')
                 ->color('warning'),
+            Stat::make('Total Santri', DataSiswa::count())
+                ->description('Jumlah santri')
+                ->descriptionIcon('heroicon-m-academic-cap')
+                ->color('primary'),
+            Stat::make('Total Guru', DataGuru::count())
+                ->description('Jumlah guru')
+                ->descriptionIcon('heroicon-m-user-group')
+                ->color('secondary'),
         ];
     }
 }
