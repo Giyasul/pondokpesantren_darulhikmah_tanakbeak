@@ -246,9 +246,10 @@
         <div class="container">
             <div class="row g-4">
                 <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=UUcyvmgQ5nV3kTKxDx6OSdFQ"
-                        title="YouTube Uploads" allowfullscreen>
-                    </iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/E05goM3V8tM?si=5nsFQsrJ_hExc8Us"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="gallery-masonry">
                     @foreach ($galeri as $g)
