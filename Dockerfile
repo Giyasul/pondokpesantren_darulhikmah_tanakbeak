@@ -20,10 +20,6 @@ RUN mkdir -p database
 RUN touch database/database.sqlite
 RUN chmod -R 775 storage bootstrap/cache database
 
-RUN php artisan vendor:publish --tag=filament-assets --force
-RUN php artisan filament:assets --force
-RUN php artisan storage:link || true
-
 EXPOSE 8080
 
 CMD php artisan serve --host=0.0.0.0 --port=8080
