@@ -17,47 +17,88 @@ class DataSiswasTable
     {
         return $table
             ->columns([
+                // FOTO
                 ImageColumn::make('foto')
                     ->label('Foto')
+                    ->disk('public')
                     ->circular()
-                    ->default(null),
+                    ->defaultImageUrl(url('/image/logo.jpeg')),
 
+                // NAMA
                 TextColumn::make('nama')
+                    ->label('Nama Santri')
                     ->searchable()
-                    ->sortable()
                     ->weight('bold'),
 
+                // NISN
                 TextColumn::make('nisn')
+                    ->label('NISN')
                     ->searchable()
                     ->toggleable(),
 
+                // NIK
                 TextColumn::make('nik')
+                    ->label('NIK')
+                    ->searchable()
                     ->toggleable(),
 
+                // JK
                 BadgeColumn::make('jk')
-                    ->label('JK')
+                    ->label('Jenis Kelamin')
+                    ->formatStateUsing(fn (string $state) => match ($state) {
+                        'L' => 'Laki-laki',
+                        'P' => 'Perempuan',
+                        default => $state,
+                    })
                     ->colors([
                         'primary' => 'L',
                         'pink' => 'P',
                     ]),
 
-                TextColumn::make('kelas')
+                // JENJANG
+                BadgeColumn::make('jenjang')
+                    ->label('Jenjang')
+                    ->colors([
+                        'info' => 'RA',
+                        'success' => 'MI',
+                        'warning' => 'MTS',
+                        'danger' => 'MA',
+                    ])
                     ->toggleable(),
 
+                // KELAS
+                TextColumn::make('kelas')
+                    ->label('Kelas')
+                    ->searchable()
+                    ->toggleable(),
+
+                // ANGKATAN
+                TextColumn::make('angkatan')
+                    ->label('Angkatan')
+                    ->toggleable(),
+
+                // STATUS
                 BadgeColumn::make('status')
                     ->label('Status')
+                    ->formatStateUsing(fn (string $state) => match ($state) {
+                        'aktif' => 'Aktif',
+                        'nonaktif' => 'Tidak Aktif',
+                        'lulus' => 'Sudah Lulus',
+                        default => $state,
+                    })
                     ->colors([
                         'success' => 'aktif',
                         'danger' => 'nonaktif',
+                        'warning' => 'lulus',
                     ])
                     ->toggleable(),
 
                 BadgeColumn::make('kebutuhan_khusus')
                     ->label('Kebutuhan Khusus')
-                    ->getStateUsing(fn ($record) => $record->kebutuhan_khusus)
+                    ->formatStateUsing(fn ($state) => $state ? 'Iya' : 'Tidak')
                     ->colors([
                         'success' => true,
-                        'danger' => false,
+                        'gray' => false,
                     ]),
             ])
             ->filters([

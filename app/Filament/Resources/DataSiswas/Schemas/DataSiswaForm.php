@@ -49,8 +49,11 @@ class DataSiswaForm
                                     ->label('Status')
                                     ->options([
                                         'aktif' => 'Aktif',
-                                        'nonaktif' => 'Non Aktif',
+                                        'nonaktif' => 'Tidak Aktif',
+                                        'lulus' => 'Sudah Lulus',
                                     ])
+                                    ->required()
+                                    ->native(false)
                                     ->placeholder('Pilih status'),
 
                                 Select::make('jk')
@@ -81,6 +84,22 @@ class DataSiswaForm
 
                                 TextInput::make('nama_wali')
                                     ->label('Nama Wali Siswa'),
+
+                                TextInput::make('angkatan')
+                                    ->label('Angkatan')
+                                    ->placeholder('Contoh: 2024'),
+
+                                Select::make('jenjang')
+                                    ->label('Jenjang')
+                                    ->options([
+                                        'RA' => 'RA',
+                                        'MI' => 'MI',
+                                        'MTS' => 'MTS',
+                                        'MA' => 'MA',
+                                    ])
+                                    ->native(false)
+                                    ->placeholder('Pilih jenjang'),
+
                             ]),
                     ])
                     ->columns(1),

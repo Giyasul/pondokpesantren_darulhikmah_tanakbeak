@@ -19,13 +19,14 @@ return new class extends Migration
             $table->date('tanggal_lahir')->nullable();
             $table->string('kelas')->nullable();
             $table->string('status')->nullable();
-            $table->string('jk')->nullable(); // Ganti enum ke string
+            $table->string('jk')->nullable();
             $table->text('alamat')->nullable();
-            $table->boolean('kebutuhan_khusus')->default(false);
+            $table->boolean('kebutuhan_khusus')->nullable();
             $table->string('nama_ayah')->nullable();
             $table->string('nama_ibu')->nullable();
             $table->string('nama_wali')->nullable();
-
+            $table->string('angkatan')->nullable();
+            $table->string('jenjang')->nullable();
             $table->timestamps();
         });
     }

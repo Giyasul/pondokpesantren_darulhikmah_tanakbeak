@@ -32,6 +32,7 @@ class DataGurusTable
                     ->toggleable(),
 
                 TextColumn::make('nuptk')
+                    ->searchable()
                     ->toggleable(),
 
                 BadgeColumn::make('jk')
@@ -46,6 +47,7 @@ class DataGurusTable
                     ->toggleable(),
 
                 TextColumn::make('penempatan')
+                    ->searchable()
                     ->badge()
                     ->color('success')
                     ->toggleable(),
