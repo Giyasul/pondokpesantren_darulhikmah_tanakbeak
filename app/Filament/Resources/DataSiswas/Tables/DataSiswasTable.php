@@ -10,6 +10,7 @@ use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 
 class DataSiswasTable
 {
@@ -27,8 +28,7 @@ class DataSiswasTable
                 // NAMA
                 TextColumn::make('nama')
                     ->label('Nama Santri')
-                    ->searchable()
-                    ->weight('bold'),
+                    ->searchable(),
 
                 // NISN
                 TextColumn::make('nisn')
@@ -108,9 +108,17 @@ class DataSiswasTable
                 EditAction::make(),
                 DeleteAction::make(),
             ])
-            ->toolbarActions([
+            ->bulkActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
+                    ExportBulkAction::make()
+                        ->label('Download Excel')->exports([
+                            \pxlrbt\FilamentExcel\Exports\ExcelExport::make()
+                                ->fromTable()
+                                ->except([
+                                    'foto',
+                                ]),
+                        ]),
                 ]),
             ])
             ->defaultSort('nama');

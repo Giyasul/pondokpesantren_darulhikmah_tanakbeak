@@ -52,7 +52,6 @@ class DataSiswaForm
                                         'nonaktif' => 'Tidak Aktif',
                                         'lulus' => 'Sudah Lulus',
                                     ])
-                                    ->required()
                                     ->native(false)
                                     ->placeholder('Pilih status'),
 
@@ -65,8 +64,7 @@ class DataSiswaForm
                                     ->placeholder('Pilih jenis kelamin'),
 
                                 TextInput::make('alamat')
-                                    ->label('Alamat')
-                                    ->columnSpanFull(),
+                                    ->label('Alamat'),
 
                                 Select::make('kebutuhan_khusus')
                                     ->label('Kebutuhan Khusus')
