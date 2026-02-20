@@ -23,5 +23,7 @@ class DataSiswa extends Model
         'nama_ayah',
         'nama_ibu',
         'nama_wali',
+        'angkatan',
+        'jenjang',
     ];
 }
