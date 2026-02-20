@@ -255,6 +255,7 @@
                             <li><a class="dropdown-item" href="{{ url('/berita') }}">Berita & Artikel</a></li>
                             <li><a class="dropdown-item" href="#">Ekskul</a></li>
                             <li><a class="dropdown-item" href="/perpustakaan">Perpustakaan Digital</a></li>
+                            <li><a class="dropdown-item" href="/perpustakaan">Data Santri</a></li>
 
                         </ul>
                     </li>

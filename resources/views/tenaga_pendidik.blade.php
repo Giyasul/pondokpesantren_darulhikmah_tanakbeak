@@ -1,4 +1,4 @@
-@extends('layout.layout')
+<!-- @extends('layout.layout')
 @section('judul', 'Tenaga Pendidik Pondok Pesantren Darul Hikmah')
 @section('konten')
 
@@ -187,4 +187,4 @@
         pendidikEls.forEach(el => pendidikObserver.observe(el));
     </script>
 
-@endsection
+@endsection -->
