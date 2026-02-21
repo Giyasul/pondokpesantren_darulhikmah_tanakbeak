@@ -20,9 +20,6 @@ WORKDIR /var/www/html
 
 COPY . .
 
-RUN npm install
-RUN npm run build
-
 RUN composer install --no-dev --optimize-autoloader
 
 RUN mkdir -p database
