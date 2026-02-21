@@ -26,6 +26,7 @@ class GalerisTable
                 ImageColumn::make('gambar')
                     ->label('Gambar')
                     ->disk('public')
+                    ->visibility('public')
                     ->height(100)
                     ->searchable()
                     ->circular(),

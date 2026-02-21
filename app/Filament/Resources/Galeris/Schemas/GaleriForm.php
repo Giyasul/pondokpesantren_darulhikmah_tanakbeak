@@ -28,6 +28,7 @@ class GaleriForm
                     ->label('Gambar')
                     ->image()
                     ->disk('public')
+                    ->visibility('public')
                     ->directory(fn ($get) => 'galeri/'.($get('folder') ?? 'lainnya'))
                     ->getUploadedFileNameForStorageUsing(
                         fn ($file) => time().'_'.
