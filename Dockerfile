@@ -29,6 +29,7 @@ CMD sh -c "\
 if [ ! -f database/database.sqlite ]; then \
   mkdir -p database && touch database/database.sqlite; \
 fi && \
+php artisan storage:link || true && \
 php artisan migrate --force && \
 php artisan db:seed --force || true && \
 php artisan serve --host=0.0.0.0 --port=8080"
