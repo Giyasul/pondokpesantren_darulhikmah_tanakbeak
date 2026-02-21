@@ -27,7 +27,6 @@ class GaleriForm
                 FileUpload::make('gambar')
                     ->label('Gambar')
                     ->image()
-                    ->directory('foto')
                     ->disk('public')
                     ->visibility('public')
                     ->directory(fn ($get) => 'galeri/'.($get('folder') ?? 'lainnya'))
