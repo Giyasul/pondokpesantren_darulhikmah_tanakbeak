@@ -21,11 +21,11 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
-RUN chmod -R 775 storage bootstrap/cache
+RUN chmod -R 775 storage bootstrap/cache database
 
 EXPOSE 8080
 
-VOLUME ["/var/www/html/storage"]
+VOLUME ["/var/www/html/storage", "/var/www/html/database"]
 
 CMD sh -c "\
 if [ ! -f database/database.sqlite ]; then \
@@ -33,5 +33,5 @@ if [ ! -f database/database.sqlite ]; then \
 fi && \
 php artisan storage:link || true && \
 php artisan migrate --force && \
-php artisan db:seed --force || true && \
+php artisan db:seed --class=AdminSeeder --force || true && \
 php artisan serve --host=0.0.0.0 --port=8080"
