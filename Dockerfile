@@ -6,7 +6,9 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     git \
-    && docker-php-ext-install intl zip
+    && docker-php-ext-install intl zip \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
