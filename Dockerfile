@@ -25,6 +25,8 @@ RUN chmod -R 775 storage bootstrap/cache
 
 EXPOSE 8080
 
+VOLUME ["/var/www/html/storage"]
+
 CMD sh -c "\
 if [ ! -f database/database.sqlite ]; then \
   mkdir -p database && touch database/database.sqlite; \
