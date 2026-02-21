@@ -25,7 +25,7 @@ class GalerisTable
                     ->state(fn ($record) => basename($record->gambar)),
                 ImageColumn::make('gambar')
                     ->label('Gambar')
-                    ->disk('public')
+                    ->url(fn ($record) => asset('storage/'.$record->gambar))
                     ->visibility('public')
                     ->height(100)
                     ->searchable()
