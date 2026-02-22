@@ -24,12 +24,11 @@ class GalerisTable
                     ->label('Nama Gambar')
                     ->state(fn ($record) => basename($record->gambar)),
                 ImageColumn::make('gambar')
-                    ->disk('public')
-                    ->visibility('public')
                     ->label('Gambar')
                     ->height(100)
-                    ->searchable()
-                    ->circular(),
+                    ->circular()
+                    ->getStateUsing(fn ($record) => $record->gambar)
+                    ->url(fn ($record) => asset('storage/'.$record->gambar)),
             ])
             ->filters([
                 //
