@@ -24,7 +24,7 @@ RUN composer install --no-dev --optimize-autoloader
 EXPOSE 8080
 
 CMD sh -c "\
-php artisan storage:link \
+php artisan storage:link || true && \
 php artisan migrate --force && \
 php artisan db:seed --class=AdminSeeder --force || true && \
 php artisan serve --host=0.0.0.0 --port=8080"
