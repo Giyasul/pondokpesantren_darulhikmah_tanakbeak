@@ -27,8 +27,8 @@ class GaleriForm
                     ->label('Gambar')
                     ->image()
                     ->disk('public')
-                    ->visibility('public')
                     ->directory(fn ($get) => 'galeri/'.($get('folder') ?? 'lainnya'))
+                    ->visibility('public')
                     ->getUploadedFileNameForStorageUsing(
                         fn ($file) => time().'_'.
                             Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME))
