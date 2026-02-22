@@ -16,6 +16,7 @@ class GaleriForm
             ->components([
                 TextInput::make('folder')
                     ->label('Folder')
+                    ->required()
                     ->datalist(
                         fn () => DB::table('galeri')
                             ->whereNotNull('folder')
@@ -27,7 +28,7 @@ class GaleriForm
                     ->label('Gambar')
                     ->image()
                     ->disk('public')
-                    ->directory(fn ($get) => 'galeri/'.($get('folder') ?? 'lainnya'))
+                    ->directory('galeri')
                     ->visibility('public')
                     ->getUploadedFileNameForStorageUsing(
                         fn ($file) => time().'_'.
