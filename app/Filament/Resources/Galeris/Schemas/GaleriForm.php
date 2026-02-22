@@ -16,7 +16,6 @@ class GaleriForm
             ->components([
                 TextInput::make('folder')
                     ->label('Folder')
-                    ->required()
                     ->datalist(
                         fn () => DB::table('galeri')
                             ->whereNotNull('folder')
