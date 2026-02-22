@@ -25,6 +25,7 @@ class GalerisTable
                     ->state(fn ($record) => basename($record->gambar)),
                 ImageColumn::make('gambar')
                     ->disk('public')
+                    ->visibility('public')
                     ->label('Gambar')
                     ->height(100)
                     ->searchable()
