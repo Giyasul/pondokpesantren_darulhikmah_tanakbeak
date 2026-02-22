@@ -19,6 +19,7 @@ class BeritasTable
                 ImageColumn::make('gambar')
                     ->label('Gambar')
                     ->disk('public')
+                    ->visibility('public')
                     ->rounded()
                     ->size(100),
                 TextColumn::make('judul')

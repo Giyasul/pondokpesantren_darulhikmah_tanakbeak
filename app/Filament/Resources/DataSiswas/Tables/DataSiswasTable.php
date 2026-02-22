@@ -22,6 +22,7 @@ class DataSiswasTable
                 ImageColumn::make('foto')
                     ->label('Foto')
                     ->disk('public')
+                    ->visibility('public')
                     ->circular()
                     ->defaultImageUrl(url('/image/logo.jpeg')),
 

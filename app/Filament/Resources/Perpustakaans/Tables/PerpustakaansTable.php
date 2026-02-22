@@ -23,6 +23,7 @@ class PerpustakaansTable
                 ImageColumn::make('foto')
                     ->label('Foto Sampul')
                     ->disk('public')
+                    ->visibility('public')
                     ->circular()
                     ->height(100),
                 TextColumn::make('judul')
