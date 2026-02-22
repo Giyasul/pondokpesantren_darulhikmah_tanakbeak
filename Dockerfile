@@ -20,11 +20,12 @@ WORKDIR /var/www/html
 COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
+RUN chmod -R 775 storage bootstrap/cache
 
 EXPOSE 8080
 
 CMD sh -c "\
-php artisan storage:link || true && \
+php artisan storage:link \
 php artisan migrate --force && \
 php artisan db:seed --class=AdminSeeder --force || true && \
 php artisan serve --host=0.0.0.0 --port=8080"
