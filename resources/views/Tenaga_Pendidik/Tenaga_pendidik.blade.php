@@ -11,12 +11,8 @@
 
     html, body { background-color: var(--light-bg); }
 
-    /* --- JUDUL SELAYANG PANDANG --- */
-    .section-title-wrapper {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
+    /* --- JUDUL --- */
+    .section-title-wrapper { text-align: center; margin-bottom: 40px; }
     .section-title {
         color: var(--primary-green);
         font-weight: 800;
@@ -27,14 +23,13 @@
         padding-bottom: 15px;
         font-size: 1.75rem;
     }
-
     .section-title::after {
         content: "";
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 60%; /* Panjang garis emas */
+        width: 60%;
         height: 3px;
         background-color: var(--accent-gold);
         border-radius: 2px;
@@ -47,11 +42,10 @@
         padding: 50px 40px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         border: 1px solid #eee;
-        margin-top: 40px; /* Jarak dari Hero */
-        position: relative;
+        margin-top: 40px;
     }
 
-    /* --- TEACHER CARD --- */
+    /* --- TEACHER CARD (REVISED SIZE) --- */
     .teacher-card { 
         background: #fff;
         border-radius: 15px; 
@@ -60,9 +54,10 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         transition: all 0.3s ease;
         cursor: pointer;
-        height: 100%;
+        height: 100%; /* Memaksa card mengisi tinggi kolom */
         display: flex;
         flex-direction: column;
+        min-height: 320px; /* Menjaga agar card tidak terlalu pendek */
     }
     
     .teacher-card:hover { 
@@ -73,36 +68,81 @@
 
     .teacher-img-wrapper { 
         width: 100%; 
-        aspect-ratio: 1/1; 
+        aspect-ratio: 1/1; /* Menjaga rasio kotak sempurna */
         overflow: hidden;
+        background-color: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0; /* Mencegah gambar menyusut */
     }
 
-    .teacher-img { width: 100%; height: 100%; object-fit: cover; }
-    .teacher-info { padding: 15px 10px; text-align: center; }
-    .teacher-name { font-weight: 700; color: #333; display: block; font-size: 0.95rem; line-height: 1.2; }
-    .teacher-subject { font-size: 0.8rem; color: #888; display: block; text-transform: uppercase; margin-top: 5px; }
+    .teacher-img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+    }
+    
+    .teacher-placeholder-img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; /* Agar icon memenuhi kotak seperti foto asli */
+    }
+
+    .teacher-info { 
+        padding: 15px; 
+        text-align: center; 
+        flex-grow: 1; /* Membuat area info mengambil sisa ruang */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .teacher-name { 
+        font-weight: 700; 
+        color: #333; 
+        display: block; 
+        font-size: 0.9rem; 
+        line-height: 1.3;
+        margin-bottom: 5px;
+    }
+
+    .teacher-subject { 
+        font-size: 0.75rem; 
+        color: var(--primary-green); 
+        display: block; 
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
 
     /* --- MODAL STYLE --- */
-    .modal { z-index: 9999 !important; }
-    .modal-backdrop { z-index: 9998 !important; }
     .modal-content { border-radius: 20px; border: none; }
     .modal-teacher-name { font-size: 1.8rem; font-weight: 800; color: #222; border-bottom: 3px solid var(--accent-gold); padding-bottom: 5px; margin-bottom: 15px; display: inline-block; }
     .detail-label { font-weight: 800; color: var(--primary-green); margin-top: 15px; display: block; text-transform: uppercase; font-size: 0.85rem; }
     .detail-text { color: #444; font-size: 0.95rem; margin-bottom: 0; }
-    .img-detail-full { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 12px; }
+    
+    .img-detail-container {
+        width: 100%;
+        aspect-ratio: 3/4;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #f1f1f1;
+    }
+    .img-detail-full { width: 100%; height: 100%; object-fit: cover; }
 
     /* --- HERO --- */
     .hero-carousel .carousel-item { height: 350px; background-color: #000; }
     .carousel-image-container img { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
     .carousel-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; }
 
-    /* Animation */
     .reveal { opacity: 0; transform: translateY(30px); transition: all .8s ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 768px) {
-        .main-content-wrapper { padding: 30px 20px; margin-top: 20px; }
-        .section-title { font-size: 1.4rem; }
+        .main-content-wrapper { padding: 25px 15px; }
+        .teacher-card { min-height: 280px; }
+        .teacher-name { font-size: 0.85rem; }
     }
 </style>
 
@@ -122,17 +162,20 @@
 
 <div class="container mb-5">
     <div class="main-content-wrapper">
-        
         <div class="section-title-wrapper reveal">
             <h2 class="section-title">DAFTAR PENGAJAR PONPES DARUL HIKMAH</h2>
         </div>
 
-        <div class="row g-4 justify-content-center">
-            @forelse ($gurus as $guru)
+        <div class="row g-3 g-md-4 justify-content-center"> @forelse ($gurus as $guru)
                 <div class="col-6 col-md-4 col-lg-3 reveal">
                     <div class="teacher-card" data-bs-toggle="modal" data-bs-target="#detailGuru{{ $guru->id }}">
                         <div class="teacher-img-wrapper">
-                            <img src="{{ $guru->foto ? asset('storage/' . $guru->foto) : asset('image/default.jpeg') }}" class="teacher-img">
+                            @if($guru->foto)
+                                <img src="{{ asset('storage/' . $guru->foto) }}" class="teacher-img" alt="{{ $guru->nama }}">
+                            @else
+                                <img src="{{ $guru->jk == 'L' ? asset('image/male-icon.png') : asset('image/female-icon.png') }}" 
+                                     class="teacher-placeholder-img">
+                            @endif
                         </div>
                         <div class="teacher-info">
                             <span class="teacher-name">{{ $guru->nama }}</span>
@@ -164,7 +207,14 @@
                     <h2 class="modal-teacher-name">{{ $guru->nama }}</h2>
                     <div class="row mt-3">
                         <div class="col-md-5 mb-4 text-center">
-                            <img src="{{ $guru->foto ? asset('storage/' . $guru->foto) : asset('image/default.jpeg') }}" class="img-detail-full">
+                            <div class="img-detail-container">
+                                @if($guru->foto)
+                                    <img src="{{ asset('storage/' . $guru->foto) }}" class="img-detail-full">
+                                @else
+                                    <img src="{{ $guru->jk == 'L' ? asset('image/male-icon.png') : asset('image/female-icon.png') }}" 
+                                         class="img-detail-full">
+                                @endif
+                            </div>
                         </div>
                         <div class="col-md-7">
                             <div class="row">
