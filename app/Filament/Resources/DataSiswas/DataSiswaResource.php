@@ -18,6 +18,8 @@ class DataSiswaResource extends Resource
 {
     protected static ?string $model = DataSiswa::class;
 
+    protected static ?string $navigationLabel = 'Data Siswa';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'Siswa';

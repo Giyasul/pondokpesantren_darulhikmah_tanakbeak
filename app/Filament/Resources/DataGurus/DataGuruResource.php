@@ -18,6 +18,8 @@ class DataGuruResource extends Resource
 {
     protected static ?string $model = DataGuru::class;
 
+    protected static ?string $navigationLabel = 'Data Guru';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'Guru';

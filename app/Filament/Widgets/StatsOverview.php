@@ -8,6 +8,7 @@ use App\Models\DataSiswa;
 use App\Models\Galeri;
 use App\Models\Perpustakaan;
 use App\Models\User;
+use App\Models\Video;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
@@ -20,8 +21,7 @@ class StatsOverview extends StatsOverviewWidget
                 ->description('Jumlah berita')
                 ->descriptionIcon('heroicon-m-newspaper')
                 ->color('success'),
-
-            Stat::make('Total Galeri', Galeri::count())
+            Stat::make('Total Galeri', Galeri::count() + Video::count())
                 ->description('Jumlah galeri')
                 ->descriptionIcon('heroicon-m-photo')
                 ->color('info'),

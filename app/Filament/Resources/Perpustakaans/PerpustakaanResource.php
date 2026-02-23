@@ -18,6 +18,8 @@ class PerpustakaanResource extends Resource
 {
     protected static ?string $model = Perpustakaan::class;
 
+    protected static ?string $navigationLabel = 'Perpustakaan';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'Perpustakaan';
