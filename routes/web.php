@@ -22,3 +22,10 @@ Route::get('/perpustakaan', [PerpustakaanController::class, 'index'])->name('per
 use App\Http\Controllers\GuruContoller;
 
 Route::get('/tenaga-pendidik', [GuruContoller::class, 'index'])->name('tenaga-pendidik');
+
+
+use App\Http\Controllers\SantriController;
+
+    
+// Route untuk halaman data santri
+Route::get('/santri', [SantriController::class, 'index'])->name('santri.index');  

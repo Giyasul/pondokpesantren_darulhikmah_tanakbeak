@@ -255,13 +255,20 @@
                             <li><a class="dropdown-item" href="{{ url('/berita') }}">Berita & Artikel</a></li>
                             <li><a class="dropdown-item" href="#">Ekskul</a></li>
                             <li><a class="dropdown-item" href="/perpustakaan">Perpustakaan Digital</a></li>
-                            <li><a class="dropdown-item" href="/perpustakaan">Data Santri</a></li>
+                            <li><a class="dropdown-item" href="/santri">Data Santri</a></li>
 
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/galeri') }}">Galeri</a>
-                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarLembaga" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Galeri
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarLembaga">
+                            <li><a class="dropdown-item" href="#">Foto</a></li>
+                            <li><a class="dropdown-item" href="#">Video</a></li>
+
+                        </ul>
                 </ul>
             </div>
         </div>
