@@ -9,6 +9,7 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 
@@ -55,6 +56,9 @@ class DataSiswasTable
                         'primary' => 'L',
                         'pink' => 'P',
                     ]),
+
+                TextColumn::make('nama_wali')
+                    ->label('Nama Wali'),
 
                 // JENJANG
                 BadgeColumn::make('jenjang')
@@ -103,7 +107,21 @@ class DataSiswasTable
                     ]),
             ])
             ->filters([
-                //
+                SelectFilter::make('jenjang')
+                    ->label('Filter Jenjang')
+                    ->options([
+                        'RA' => 'RA',
+                        'MI' => 'MI',
+                        'MTS' => 'MTS',
+                        'MA' => 'MA',
+                    ]),
+                SelectFilter::make('status')
+                    ->label('Filter Status')
+                    ->options([
+                        'aktif' => 'Aktif',
+                        'nonaktif' => 'Tidak Aktif',
+                        'lulus' => 'Sudah Lulus',
+                    ]),
             ])
             ->recordActions([
                 EditAction::make(),

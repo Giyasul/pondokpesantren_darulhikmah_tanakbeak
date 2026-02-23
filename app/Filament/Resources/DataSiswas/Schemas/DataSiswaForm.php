@@ -42,19 +42,6 @@ class DataSiswaForm
                                 DatePicker::make('tanggal_lahir')
                                     ->label('Tanggal Lahir'),
 
-                                TextInput::make('kelas')
-                                    ->label('Kelas'),
-
-                                Select::make('status')
-                                    ->label('Status')
-                                    ->options([
-                                        'aktif' => 'Aktif',
-                                        'nonaktif' => 'Tidak Aktif',
-                                        'lulus' => 'Sudah Lulus',
-                                    ])
-                                    ->native(false)
-                                    ->placeholder('Pilih status'),
-
                                 Select::make('jk')
                                     ->label('Jenis Kelamin')
                                     ->options([
@@ -83,10 +70,6 @@ class DataSiswaForm
                                 TextInput::make('nama_wali')
                                     ->label('Nama Wali Siswa'),
 
-                                TextInput::make('angkatan')
-                                    ->label('Angkatan')
-                                    ->placeholder('Contoh: 2024'),
-
                                 Select::make('jenjang')
                                     ->label('Jenjang')
                                     ->options([
@@ -95,8 +78,59 @@ class DataSiswaForm
                                         'MTS' => 'MTS',
                                         'MA' => 'MA',
                                     ])
-                                    ->native(false)
+                                    ->reactive()
+                                    ->afterStateUpdated(function ($state, callable $set) {
+                                        $set('kelas', null);
+                                    })
                                     ->placeholder('Pilih jenjang'),
+
+                                Select::make('kelas')
+                                    ->label('Kelas')
+                                    ->options(function (callable $get) {
+                                        $jenjang = $get('jenjang');
+
+                                        return match ($jenjang) {
+                                            'RA' => [
+                                                'kelas 1' => 'Kelas 1',
+                                                'kelas 2' => 'Kelas 2',
+                                            ],
+                                            'MI' => [
+                                                'kelas 1' => 'Kelas 1',
+                                                'kelas 2' => 'Kelas 2',
+                                                'kelas 3' => 'Kelas 3',
+                                                'kelas 4' => 'Kelas 4',
+                                                'kelas 5' => 'Kelas 5',
+                                                'kelas 6' => 'Kelas 6',
+                                            ],
+                                            'MTS' => [
+                                                'kelas 7' => 'Kelas 7',
+                                                'kelas 8' => 'Kelas 8',
+                                                'kelas 9' => 'Kelas 9',
+                                            ],
+                                            'MA' => [
+                                                'kelas 10' => 'Kelas 10',
+                                                'kelas 11' => 'Kelas 11',
+                                                'kelas 12' => 'Kelas 12',
+                                            ],
+                                            default => [],
+                                        };
+                                    })
+                                    ->placeholder('Pilih kelas')
+                                    ->reactive(),
+
+                                Select::make('status')
+                                    ->label('Status')
+                                    ->options([
+                                        'aktif' => 'Aktif',
+                                        'nonaktif' => 'Tidak Aktif',
+                                        'lulus' => 'Sudah Lulus',
+                                    ])
+                                    ->native(false)
+                                    ->placeholder('Pilih status'),
+
+                                TextInput::make('angkatan')
+                                    ->label('Angkatan')
+                                    ->placeholder('Contoh: 2024'),
 
                             ]),
                     ])
