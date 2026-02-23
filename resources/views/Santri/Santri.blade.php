@@ -36,42 +36,57 @@
         width: 60%; height: 3px; background-color: var(--accent-gold);
     }
 
-    /* --- MODAL STYLE --- */
+    /* --- MODAL STYLE REVISI (FOCUS FONT SIZE) --- */
     .modal-content { border-radius: 25px; border: none; overflow: hidden; }
     
+    /* Judul Field (NISN, ANGKATAN, dll) */
     .detail-label-title {
         color: var(--primary-green);
-        font-weight: 700;
-        font-size: 0.75rem;
+        font-weight: 800;
+        font-size: 1rem; /* Ukuran diperbesar agar lebih dominan */
         display: block;
         text-transform: uppercase;
-        margin-bottom: 0px;
-        letter-spacing: 0.8px;
+        margin-bottom: 2px;
+        letter-spacing: 0.5px;
     }
 
+    /* Isi Data (Nilai dari database) */
     .detail-value-text {
         color: #333;
-        font-weight: 600;
-        font-size: 0.95rem; 
+        font-weight: 500;
+        font-size: 1.1rem; /* Ukuran data dibuat lebih mantap dibaca */
         margin-bottom: 0;
     }
     
     .img-detail-container {
-        width: 100%; height: 100%; border-radius: 20px;
-        overflow: hidden; background-color: #f8f9fa; border: 1px solid #eee;
+        width: 100%; 
+        height: 100%; 
+        border-radius: 20px;
+        overflow: hidden; 
+        background-color: #f8f9fa; 
+        border: 1px solid #eee;
     }
     .img-detail-full { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .reveal { opacity: 0; transform: translateY(30px); transition: all .8s ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
 
+    /* --- ANIMASI MODAL --- */
     .modal.fade .modal-dialog {
         transform: scale(0.9) translateY(30px);
         opacity: 0;
         transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-    .modal.show .modal-dialog { transform: scale(1) translateY(0); opacity: 1; }
-    .modal-backdrop.show { opacity: 0.7; backdrop-filter: blur(5px); }
+
+    .modal.show .modal-dialog {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+
+    .modal-backdrop.show {
+        opacity: 0.7;
+        backdrop-filter: blur(5px);
+    }
 </style>
 
 <div class="carousel slide hero-carousel">
@@ -96,7 +111,7 @@
 
         <div class="row mb-4 align-items-end g-3">
             <div class="col-lg-8">
-                <form action="{{ route('santri.index') }}" method="GET" class="row g-2" id="filterForm">
+                <form action="{{ route('santri.index') }}" method="GET" class="row g-2">
                     <div class="col-6 col-md-4">
                         <label class="small fw-bold text-success">JENJANG</label>
                         <select name="jenjang" id="jenjangSelect" class="form-select border-success">
@@ -177,47 +192,58 @@
 <div class="modal fade" id="detailModal{{ $s->id }}" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content border-0 shadow-lg">
+            
             <div class="text-end p-2 pb-0">
                 <button type="button" class="btn-close m-2" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            
             <div class="modal-body px-4 px-md-5 pb-5 pt-0">
                 <div class="mb-4">
                     <h2 class="fw-bold mb-1" style="color: #222; font-size: 2.2rem; letter-spacing: -1px;">{{ $s->nama }}</h2>
                     <div style="width: 50px; height: 5px; background-color: #D4AF37; border-radius: 10px;"></div>
                 </div>
+
                 <div class="row g-4 d-flex align-items-stretch">
                     <div class="col-md-5">
                         <div class="img-detail-container shadow-sm">
-                            <img src="{{ $s->foto ? asset('storage/'.$s->foto) : asset('image/default-user.png') }}" class="img-detail-full">
+                            <img src="{{ $s->foto ? asset('storage/'.$s->foto) : asset('image/default-user.png') }}" 
+                                 class="img-detail-full">
                         </div>
                     </div>
+
                     <div class="col-md-7">
                         <div class="row g-3">
                             <div class="col-6">
                                 <label class="detail-label-title">NISN</label>
                                 <p class="detail-value-text">{{ $s->nisn ?? '-' }}</p>
                             </div>
+                            
                             <div class="col-6">
                                 <label class="detail-label-title">Jenis Kelamin</label>
                                 <p class="detail-value-text">{{ $s->jk == 'L' ? 'Laki-laki' : 'Perempuan' }}</p>
                             </div>
+
                             <div class="col-6">
                                 <label class="detail-label-title">Angkatan</label>
                                 <p class="detail-value-text">{{ $s->angkatan ?? '-' }}</p>
                             </div>
+
                             <div class="col-6">
                                 <label class="detail-label-title">Status</label>
                                 <p class="detail-value-text">{{ ucfirst($s->status ?? 'Aktif') }}</p>
                             </div>
+
                             <div class="col-12">
                                 <label class="detail-label-title">Tempat & Tanggal Lahir</label>
                                 <p class="detail-value-text">{{ $s->tempat_lahir ?? '-' }}, {{ $s->tanggal_lahir ?? '-' }}</p>
                             </div>
+
                             <div class="col-12">
                                 <hr class="my-2" style="opacity: 0.1;">
                                 <label class="detail-label-title">Pendidikan Aktif</label>
                                 <p class="fw-bold fs-5" style="color: #0D6B0D; margin-bottom: 0;">{{ $s->jenjang }} - Kelas {{ trim(str_ireplace('kelas', '', $s->kelas)) }}</p>
                             </div>
+
                             <div class="col-12">
                                 <label class="detail-label-title">Alamat Asal</label>
                                 <p class="detail-value-text text-muted" style="line-height: 1.5;">{{ $s->alamat ?? '-' }}</p>
@@ -233,17 +259,17 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Reveal animation
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
         });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+        // Logic Filter Kelas Dinamis
         const jenjangSelect = document.getElementById('jenjangSelect');
         const kelasSelect = document.getElementById('kelasSelect');
-        
-        // Ambil kelas dari URL dengan penanganan spasi yang lebih aman
         const urlParams = new URLSearchParams(window.location.search);
-        const selectedKelas = urlParams.get('kelas') ? decodeURIComponent(urlParams.get('kelas')).trim() : "";
+        const selectedKelas = urlParams.get('kelas');
 
         const daftarKelas = {
             'MTS': ['7', '8', '9'],
@@ -257,19 +283,9 @@
             if (daftarKelas[jenjang]) {
                 daftarKelas[jenjang].forEach(item => {
                     const opt = document.createElement('option');
-                    
-                    // Kita buat dua kemungkinan: "Kelas 7" (Capital) dan "kelas 7" (Lowercase)
-                    // Sesuaikan string ini dengan isi kolom 'kelas' di database lo
-                    const valCapital = 'Kelas ' + item;
-                    
-                    opt.value = valCapital; 
+                    opt.value = item;
                     opt.text = 'Kelas ' + item;
-
-                    // Logic seleksi: bandingkan secara case-insensitive agar lebih akurat
-                    if (valCapital.toLowerCase() === selectedKelas.toLowerCase()) {
-                        opt.selected = true;
-                    }
-                    
+                    if (item === selectedKelas) opt.selected = true;
                     kelasSelect.appendChild(opt);
                 });
             }
