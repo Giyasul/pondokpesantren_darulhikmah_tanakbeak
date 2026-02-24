@@ -100,11 +100,8 @@ class DataSiswasTable
 
                 BadgeColumn::make('kebutuhan_khusus')
                     ->label('Kebutuhan Khusus')
-                    ->formatStateUsing(fn ($state) => $state ? 'Iya' : 'Tidak')
-                    ->colors([
-                        'success' => true,
-                        'gray' => false,
-                    ]),
+                    ->formatStateUsing(fn ($state) => $state === 'iya' ? 'Iya' : 'Tidak')
+                    ->color(fn ($state) => $state === 'iya' ? 'success' : 'gray'),
             ])
             ->filters([
                 SelectFilter::make('jenjang')

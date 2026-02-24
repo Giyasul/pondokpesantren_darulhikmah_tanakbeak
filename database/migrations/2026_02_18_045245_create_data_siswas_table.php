@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->string('jk')->nullable();
             $table->text('alamat')->nullable();
-            $table->boolean('kebutuhan_khusus')->nullable();
+            $table->string('kebutuhan_khusus')->nullable();
             $table->string('nama_ayah')->nullable();
             $table->string('nama_ibu')->nullable();
             $table->string('nama_wali')->nullable();
