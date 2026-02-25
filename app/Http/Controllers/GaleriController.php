@@ -3,16 +3,46 @@
 namespace App\Http\Controllers;
 
 use App\Models\Galeri;
-use Illuminate\Http\Request;
 
 class GaleriController extends Controller
 {
     public function index()
     {
-        $galeri = Galeri::latest()->paginate(8);
- 
-        // Memanggil file foto.blade.php di dalam folder Galeri
-        return view('Galeri.foto', compact('galeri'));
+        $data = Galeri::latest()->get()->groupBy('folder');
+
+        $galeri = $data->map(function ($items) {
+            $first = $items->first();
+
+            $allImages = [];
+
+            foreach ($items as $item) {
+                $imgs = is_array($item->gambar)
+                    ? $item->gambar
+                    : json_decode($item->gambar, true);
+
+                if (! empty($imgs)) {
+                    $allImages = array_merge($allImages, $imgs);
+                }
+            }
+
+            $first->gambar = $allImages;
+
+            return $first;
+        })->values();
+
+        // manual pagination
+        $perPage = 8;
+        $currentPage = request()->get('page', 1);
+
+        $paged = new \Illuminate\Pagination\LengthAwarePaginator(
+            $galeri->forPage($currentPage, $perPage),
+            $galeri->count(),
+            $perPage,
+            $currentPage,
+            ['path' => request()->url()]
+        );
+
+        return view('Galeri.foto', ['galeri' => $paged]);
     }
 
     public function video()

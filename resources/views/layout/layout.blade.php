@@ -197,6 +197,29 @@
             background: #D4AF37;
             box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
         }
+
+        .dropdown-galeri {
+            min-width: 140px !important;
+            width: 150px;
+            padding: 6px 6px;
+        }
+
+        .dropdown-galeri .dropdown-item {
+            padding: 8px 12px;
+            font-size: 13px;
+        }
+
+        /* 🔥 Galeri: potong lebar dikit saja */
+        .navbar .dropdown-menu.dropdown-galeri {
+            min-width: 170px !important;
+            width: auto !important;
+            padding: 12px 10px !important;
+        }
+
+        .navbar .dropdown-menu.dropdown-galeri .dropdown-item {
+            padding: 12px 16px;
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -260,14 +283,13 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarLembaga" role="button"   
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarGaleri" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Galeri
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarLembaga">
+                        <ul class="dropdown-menu dropdown-galeri" aria-labelledby="navbarGaleri">
                             <li><a class="dropdown-item" href="/galeri/foto">Foto</a></li>
                             <li><a class="dropdown-item" href="/galeri/video">Video</a></li>
-
                         </ul>
                 </ul>
             </div>
