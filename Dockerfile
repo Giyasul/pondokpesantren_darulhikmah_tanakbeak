@@ -14,6 +14,12 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install gd \
     && rm -rf /var/lib/apt/lists/*
 
+RUN echo "upload_max_filesize=200M" > /usr/local/etc/php/conf.d/uploads.ini \
+ && echo "post_max_size=200M" >> /usr/local/etc/php/conf.d/uploads.ini \
+ && echo "memory_limit=512M" >> /usr/local/etc/php/conf.d/uploads.ini \
+ && echo "max_execution_time=300" >> /usr/local/etc/php/conf.d/uploads.ini \
+ && echo "max_input_time=300" >> /usr/local/etc/php/conf.d/uploads.ini
+
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html/
@@ -24,6 +30,7 @@ RUN composer install --no-dev --optimize-autoloader
 EXPOSE 8080
 
 CMD sh -c "\
+chmod -R 775 storage bootstrap/cache && \
 php artisan storage:link || true && \
 php artisan migrate --force && \
 php artisan db:seed --class=AdminSeeder --force || true && \

@@ -29,13 +29,8 @@ class VideoForm
                     ->disk('public')
                     ->directory('video')
                     ->visibility('public')
-                    ->acceptedFileTypes([
-                        'video/mp4',
-                        'video/webm',
-                        'video/ogg',
-                        'video/quicktime', // mov
-                    ])
-                    ->maxSize(102400) // 100 MB (sesuaikan)
+                    ->acceptedFileTypes(['video/*'])
+                    ->maxSize(204800)
                     ->getUploadedFileNameForStorageUsing(
                         fn ($file) => time().'_'.
                             Str::slug(
