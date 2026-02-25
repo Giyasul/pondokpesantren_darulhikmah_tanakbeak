@@ -21,7 +21,11 @@ class StatsOverview extends StatsOverviewWidget
                 ->description('Jumlah berita')
                 ->descriptionIcon('heroicon-m-newspaper')
                 ->color('success'),
-            Stat::make('Total Galeri', Galeri::count() + Video::count())
+            Stat::make(
+                'Total Galeri',
+                Galeri::all()->sum(fn ($g) => is_array($g->gambar) ? count($g->gambar) : 0)
+                    + Video::count()
+            )
                 ->description('Jumlah galeri')
                 ->descriptionIcon('heroicon-m-photo')
                 ->color('info'),
