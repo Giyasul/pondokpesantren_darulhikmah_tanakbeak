@@ -26,9 +26,14 @@ class GaleriForm
                 FileUpload::make('gambar')
                     ->label('Gambar')
                     ->image()
+                    ->multiple()
                     ->disk('public')
                     ->directory('galeri')
                     ->visibility('public')
+                    ->maxFiles(20)
+                    ->reorderable()
+                    ->appendFiles()
+                    ->imagePreviewHeight('150')
                     ->getUploadedFileNameForStorageUsing(
                         fn ($file) => time().'_'.
                             Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME))

@@ -20,9 +20,6 @@ class GalerisTable
                 TextColumn::make('folder')
                     ->label('Folder')
                     ->searchable(),
-                TextColumn::make('nama_file')
-                    ->label('Nama Gambar')
-                    ->state(fn ($record) => basename($record->gambar)),
                 ImageColumn::make('gambar')
                     ->disk('public')
                     ->visibility('public')

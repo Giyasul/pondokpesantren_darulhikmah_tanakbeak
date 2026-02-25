@@ -22,7 +22,7 @@ class GaleriResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'gambar';
+    protected static ?string $recordTitleAttribute = 'folder';
 
     public static function form(Schema $schema): Schema
     {

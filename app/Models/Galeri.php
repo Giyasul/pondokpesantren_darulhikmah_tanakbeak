@@ -9,4 +9,8 @@ class Galeri extends Model
     protected $table = 'galeri';
 
     protected $fillable = ['gambar', 'folder'];
+
+    protected $casts = [
+        'gambar' => 'array',
+    ];
 }
