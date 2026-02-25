@@ -260,13 +260,13 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarLembaga" role="button"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarLembaga" role="button"   
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Galeri
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarLembaga">
-                            <li><a class="dropdown-item" href="#">Foto</a></li>
-                            <li><a class="dropdown-item" href="#">Video</a></li>
+                            <li><a class="dropdown-item" href="/galeri/foto">Foto</a></li>
+                            <li><a class="dropdown-item" href="/galeri/video">Video</a></li>
 
                         </ul>
                 </ul>

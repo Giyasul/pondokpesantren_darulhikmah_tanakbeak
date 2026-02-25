@@ -29,3 +29,12 @@ use App\Http\Controllers\SantriController;
     
 // Route untuk halaman data santri
 Route::get('/santri', [SantriController::class, 'index'])->name('santri.index');  
+
+
+
+
+// Route untuk Galeri Foto
+Route::get('/galeri/foto', [GaleriController::class, 'index'])->name('galeri.foto');
+
+// Route untuk Galeri Video (Opsional, jika ingin dipisah)
+Route::get('/galeri/video', [GaleriController::class, 'video'])->name('galeri.video');
