@@ -146,6 +146,10 @@
             opacity: 0.7;
             backdrop-filter: blur(5px);
         }
+
+        .img-detail-container {
+            min-height: 250px;
+        }
     </style>
 
     <div class="carousel slide hero-carousel">
@@ -270,9 +274,13 @@
 
                         <div class="row g-4 d-flex align-items-stretch">
                             <div class="col-md-5">
-                                <div class="img-detail-container shadow-sm">
-                                    <img src="{{ $s->foto ? asset('storage/' . $s->foto) : asset('image/default-user.png') }}"
-                                        class="img-detail-full">
+                                <div
+                                    class="img-detail-container shadow-sm d-flex align-items-center justify-content-center">
+                                    @if ($s->foto)
+                                        <img src="{{ asset('storage/' . $s->foto) }}" class="img-detail-full">
+                                    @else
+                                        <i class="bi bi-person-circle text-secondary" style="font-size: 120px;"></i>
+                                    @endif
                                 </div>
                             </div>
 
