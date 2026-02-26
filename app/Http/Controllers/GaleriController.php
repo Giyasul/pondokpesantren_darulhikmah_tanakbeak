@@ -56,17 +56,15 @@ class GaleriController extends Controller
 
             foreach ($items as $item) {
                 if (! empty($item->video)) {
-                    $allVideos[] = $item->video; // karena string tunggal
+                    $allVideos[] = $item->video;
                 }
             }
 
-            // ganti isi video jadi array kumpulan video
             $first->video = $allVideos;
 
             return $first;
         })->values();
 
-        // pagination manual
         $perPage = 4;
         $currentPage = request()->get('page', 1);
 
