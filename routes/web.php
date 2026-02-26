@@ -11,6 +11,10 @@ Route::get('/sejarah', function () {
 Route::get('/visi-misi', function () {
     return view('visi_misi');
 });
+Route::get('/ra', function () {
+    return view('Lembaga/Ra');
+});
+
 // Route::get('/tenaga-pendidik', function () {
 //     return view('tenaga_pendidik');
 // });
@@ -33,3 +37,5 @@ Route::get('/galeri/foto', [GaleriController::class, 'index'])->name('galeri.fot
 
 // Route untuk Galeri Video (Opsional, jika ingin dipisah)
 Route::get('/galeri/video', [GaleriController::class, 'video'])->name('galeri.video');
+
+
