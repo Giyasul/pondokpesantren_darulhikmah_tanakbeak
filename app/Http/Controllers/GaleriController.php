@@ -47,35 +47,9 @@ class GaleriController extends Controller
 
     public function video()
     {
-        $data = \App\Models\Video::latest()->get()->groupBy('folder');
+        $videos = \App\Models\Video::latest()->paginate(4);
 
-        $videos = $data->map(function ($items) {
-            $first = $items->first();
-
-            $allVideos = [];
-
-            foreach ($items as $item) {
-                if (! empty($item->video)) {
-                    $allVideos[] = $item->video;
-                }
-            }
-
-            $first->video = $allVideos;
-
-            return $first;
-        })->values();
-
-        $perPage = 4;
-        $currentPage = request()->get('page', 1);
-
-        $paged = new \Illuminate\Pagination\LengthAwarePaginator(
-            $videos->forPage($currentPage, $perPage),
-            $videos->count(),
-            $perPage,
-            $currentPage,
-            ['path' => request()->url()]
-        );
-
-        return view('Galeri.video', ['videos' => $paged]);
+        // PENTING: Nama di dalam compact harus 'videos' (pakai 's')
+        return view('Galeri.video', compact('videos'));
     }
 }

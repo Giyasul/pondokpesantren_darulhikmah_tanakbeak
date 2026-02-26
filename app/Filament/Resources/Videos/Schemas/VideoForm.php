@@ -15,7 +15,7 @@ class VideoForm
         return $schema
             ->components([
                 TextInput::make('folder')
-                    ->label('Folder')
+                    ->label('Nama Vidio')
                     ->datalist(
                         fn () => DB::table('video')
                             ->whereNotNull('folder')

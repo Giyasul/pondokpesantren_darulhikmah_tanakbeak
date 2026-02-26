@@ -217,32 +217,24 @@
                     <div class="col-12 col-md-6">
                         <div class="video-card">
                             <div class="video-wrapper">
-                                @if (is_array($item->video) && count($item->video))
-                                    @foreach ($item->video as $vid)
-                                        {{-- Deteksi Youtube --}}
-                                        @if (str_contains($vid, 'youtube.com') || str_contains($vid, 'youtu.be'))
-                                            @php
-                                                $url = parse_url($vid);
-                                                if (isset($url['query'])) {
-                                                    parse_str($url['query'], $query);
-                                                    $id = $query['v'] ?? '';
-                                                } else {
-                                                    $id = ltrim($url['path'], '/');
-                                                }
-                                            @endphp
-                                            <iframe src="https://www.youtube.com/embed/{{ $id }}"
-                                                allowfullscreen></iframe>
-
-                                            {{-- Video lokal --}}
-                                        @else
-                                            <video controls>
-                                                <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
-                                                Browser anda tidak mendukung video.
-                                            </video>
-                                        @endif
-                                    @endforeach
+                                {{-- Deteksi Youtube atau File Lokal --}}
+                                @if (str_contains($item->video, 'youtube.com') || str_contains($item->video, 'youtu.be'))
+                                    @php
+                                        $url = parse_url($item->video);
+                                        if (isset($url['query'])) {
+                                            parse_str($url['query'], $query);
+                                            $id = $query['v'] ?? '';
+                                        } else {
+                                            $id = ltrim($url['path'], '/');
+                                        }
+                                    @endphp
+                                    <iframe src="https://www.youtube.com/embed/{{ $id }}"
+                                        allowfullscreen></iframe>
                                 @else
-                                    <p class="text-center text-muted mt-3">Video tidak tersedia</p>
+                                    <video controls>
+                                        <source src="{{ asset('storage/' . $item->video) }}" type="video/mp4">
+                                        Browser anda tidak mendukung video.
+                                    </video>
                                 @endif
                             </div>
                             <div class="video-info">

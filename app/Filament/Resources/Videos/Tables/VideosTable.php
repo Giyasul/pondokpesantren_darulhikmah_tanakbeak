@@ -17,13 +17,8 @@ class VideosTable
             ->defaultSort('folder')
             ->columns([
                 TextColumn::make('folder')
-                    ->label('Folder')
+                    ->label('Nama Vidio')
                     ->searchable(),
-
-                TextColumn::make('nama_file')
-                    ->label('Nama Video')
-                    ->state(fn ($record) => basename($record->video)),
-
                 TextColumn::make('video')
                     ->label('Preview')
                     ->html()
