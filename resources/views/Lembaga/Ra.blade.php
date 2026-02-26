@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 {{-- Ganti bagian ini sesuai halaman (RA/MI/MTs/MA) --}}
-@section('judul', 'Lembaga - RA')
+@section('judul', 'Maintenance')
 
 @section('konten')
 
