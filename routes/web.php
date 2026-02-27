@@ -14,6 +14,9 @@ Route::get('/visi-misi', function () {
 Route::get('/ra', function () {
     return view('Lembaga/Ra');
 });
+Route::get('/Ekskul', function () {
+    return view('Ekskul');
+});
 
 // Route::get('/tenaga-pendidik', function () {
 //     return view('tenaga_pendidik');

@@ -276,7 +276,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarInfo">
                             <li><a class="dropdown-item" href="{{ url('/ra') }}">PPDB</a></li>
                             <li><a class="dropdown-item" href="{{ url('/berita') }}">Berita & Artikel</a></li>
-                            <li><a class="dropdown-item" href="#">Ekskul</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/Ekskul') }}">Ekskul</a></li>
                             <li><a class="dropdown-item" href="/perpustakaan">Perpustakaan Digital</a></li>
                             <li><a class="dropdown-item" href="/santri">Data Santri</a></li>
 
