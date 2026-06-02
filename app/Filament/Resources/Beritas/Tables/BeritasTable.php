@@ -25,6 +25,7 @@ class BeritasTable
                 TextColumn::make('judul')
                     ->label('Judul')
                     ->searchable()
+                    ->limit(20)
                     ->weight('bold'),
                 TextColumn::make('penulis')
                     ->label('Penulis')

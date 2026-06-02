@@ -124,7 +124,7 @@
         .book-cover-wrapper {
             position: relative;
             width: 100%;
-            aspect-ratio: 3/4;
+            aspect-ratio: 4/3;
             background: #f1f3f5;
         }
 
@@ -265,7 +265,7 @@
         </div>
 
         {{-- Grid Buku --}}
-        <div class="row g-padat">
+        <div class="row g-padat justify-content-center">
             @forelse($books as $book)
                 <div class="col-6 col-md-4 col-lg-2-4 reveal"> {{-- Tambahkan reveal di setiap kartu --}}
                     <div class="book-card">

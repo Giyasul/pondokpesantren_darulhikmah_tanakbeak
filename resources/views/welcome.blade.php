@@ -273,7 +273,7 @@
         }
 
         .article-card img {
-            height: 220px;
+            height: 300px;
             width: 100%;
             object-fit: cover;
         }
@@ -577,32 +577,32 @@
                 </div>
 
 
-              <div class="col-lg-5 reveal reveal-stat">
-    <h5 class="section-title mb-3">Statistik Ringkas</h5>
-    <hr style="color: #ffffff; border-top: 3px solid">
-    
-    <div class="stat-card mb-4 reveal delay-1">
-        <div class="stat-icon">
-            <i class="bi bi-people-fill"></i>
-        </div>
-        <div>
-            <h6 class="mb-1">Jumlah Santri Aktif</h6>
-            <h3 class="fw-bold mb-0">{{ number_format($jumlahAktif, 0, ',', '.') }}</h3>
-            <small>Tahun Ajaran 2025 / 2026</small>
-        </div>
-    </div>
+                <div class="col-lg-5 reveal reveal-stat">
+                    <h5 class="section-title mb-3">Statistik Ringkas</h5>
+                    <hr style="color: #ffffff; border-top: 3px solid">
 
-    <div class="stat-card mb-4 reveal delay-2">
-        <div class="stat-icon">
-            <i class="bi bi-mortarboard-fill"></i>
-        </div>
-        <div>
-            <h6 class="mb-1">Jumlah Alumni</h6>
-            <h3 class="fw-bold mb-0">{{ number_format($jumlahAlumni, 0, ',', '.') }}</h3>
-            <small>Hingga Tahun Ini</small>
-        </div>
-    </div>
-</div>
+                    <div class="stat-card mb-4 reveal delay-1">
+                        <div class="stat-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Jumlah Santri Aktif</h6>
+                            <h3 class="fw-bold mb-0">{{ number_format($jumlahAktif, 0, ',', '.') }}</h3>
+                            <small>Tahun Ajaran 2025 / 2026</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card mb-4 reveal delay-2">
+                        <div class="stat-icon">
+                            <i class="bi bi-mortarboard-fill"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Jumlah Alumni</h6>
+                            <h3 class="fw-bold mb-0">{{ number_format($jumlahAlumni, 0, ',', '.') }}</h3>
+                            <small>Hingga Tahun Ini</small>
+                        </div>
+                    </div>
+                </div>
 
 
 

@@ -52,7 +52,10 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin: 0;
-            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+            text-shadow:
+                0 0 6px rgba(255, 255, 255, 0.45),
+                0 0 14px rgba(212, 175, 55, 0.35),
+                2px 2px 10px rgba(0, 0, 0, 0.85);
         }
 
         /* 3. Garis Emas List Dibawah Carousel */

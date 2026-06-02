@@ -118,11 +118,11 @@
             .img-wrapper {
                 position: relative;
                 width: 100%;
-                aspect-ratio: 16/9;
+                aspect-ratio: 1/1;
                 overflow: hidden;
             }
 
-            .berita-img {   
+            .berita-img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -212,7 +212,7 @@
                         <img src="{{ asset('image/pondok.jpeg') }}" alt="Berita Pondok">
                         <div class="carousel-overlay">
                             <div class="container reveal">
-                                <h1>Warta Pesantren</h1>
+                                <h1>Berita Pesantren</h1>
                                 <p>Informasi terbaru, kegiatan santri, dan kabar terkini dari keluarga besar Pondok
                                     Pesantren Darul Hikmah NW Tanak Beak.</p>
                             </div>

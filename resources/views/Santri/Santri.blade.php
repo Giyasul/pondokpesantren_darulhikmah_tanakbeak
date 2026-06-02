@@ -18,15 +18,23 @@
 
         /* --- HERO SECTION --- */
         .hero-carousel .carousel-item {
-            height: 350px;
+            height: 400px;
             background-color: #000;
+            border-bottom: 3px solid #D4AF37;
+        }
+
+        .carousel-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
         }
 
         .carousel-image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.4;
+            object-position: cover;
+            opacity: 0.45;
         }
 
         .carousel-overlay {
@@ -35,11 +43,34 @@
             left: 0;
             width: 100%;
             height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: #fff;
+        }
+
+        .carousel-overlay h1 {
+            font-weight: 800;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            text-shadow:
+                0 0 6px rgba(255, 255, 255, 0.45),
+                0 0 14px rgba(212, 175, 55, 0.35),
+                2px 2px 10px rgba(0, 0, 0, 0.85);
+        }
+
+        .carousel-overlay p {
+            font-size: 1.25rem;
+            color: #ffffff;
+            text-shadow:
+                0 0 6px rgba(255, 255, 255, 0.45),
+                0 0 14px rgba(212, 175, 55, 0.35),
+                2px 2px 10px rgba(0, 0, 0, 0.85);
         }
 
         /* --- WRAPPER UTAMA --- */
