@@ -511,7 +511,7 @@
                                 <img src="{{ asset('image/pondok.jpeg') }}" alt="Default">
                             @endif
                             <div class="p-4">
-                                <h6>{{ $b->judul }}</h6>
+                                <h6>{{ \Illuminate\Support\Str::limit($b->judul, 60) }}</h6>
                                 <p class="mt-2">
                                     {{ \Illuminate\Support\Str::limit($b->isi, 120) }}
                                 </p>
